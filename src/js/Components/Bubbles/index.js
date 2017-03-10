@@ -23,6 +23,10 @@ export default class Bubbles extends Component {
         window.addEventListener('keyup', this.nextBubbleInstance);
     }
 
+    componentWillUnmount() {
+        window.removeEventListener('keyup', this.nextBubbleInstance);
+    }
+
     renderBubbles() {
         return this.props.children.map((child, index) => {
             if (index <= (this.state.shownBubbles - 1)) {
@@ -40,8 +44,6 @@ export default class Bubbles extends Component {
             if (typeof this.props.onNextBubble !== 'undefined') {
                 this.props.onNextBubble(this.state.shownBubbles);
             }
-        } else {
-            window.removeEventListener('keyup', this.nextBubbleInstance);
         }
     };
 
