@@ -12,7 +12,7 @@ const SlideNav = ({direction, to}) => {
 
     return (
         <a className={classes} href={to}>
-            <Icon name={`caret-${direction}`} size="small" color="white"/>
+            <Icon name={`caret-${direction}`} size="small" color="white" />
         </a>
     );
 };
