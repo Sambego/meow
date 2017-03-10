@@ -37,7 +37,6 @@ const Slide = ({children, previous, next}) => {
         <section className={styles.slide}>
             {previous && <SlideNav direction="left" to={previous} />}
             {next && <SlideNav direction="right" to={next} />}
-
             {children}
         </section>
     );

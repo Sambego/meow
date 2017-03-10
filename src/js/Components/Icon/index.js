@@ -23,7 +23,7 @@ const Icon = ({name, color, className, size, style}) => {
     }
 
     return (
-        <span dangerouslySetInnerHTML={{__html: src}} {...props} />
+        <div dangerouslySetInnerHTML={{__html: src}} {...props}></div>
     );
 };
 
