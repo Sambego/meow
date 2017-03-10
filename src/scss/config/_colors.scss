@@ -1,0 +1,20 @@
+/**
+ * Color configuration, use this file to declare variables.
+ * Never declare styles in this file.
+ */
+
+$red: #FF6B6B;
+$yellow: #FFE66D;
+$turqoise: #4ECDC4;
+$green: #71DE85;
+$blue: #66B7F9;
+$blue-dark: darken($blue, 10%);
+$blue-light: #E7EEF4;
+$bordeaux: #912F40;
+
+$black: #241808;
+$grey: #595959;
+$white: #fff;
+
+$primary: $blue;
+$secondary: $green;

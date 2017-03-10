@@ -1,0 +1,16 @@
+/**
+ * The Start pages.
+ */
+
+@import "../../../scss/config/colors";
+
+.start {
+    &__title {
+        padding: 15rem 0 0 0;
+
+        color: $blue;
+        font-size: 6.9rem;
+        text-align: center;
+        line-height: 150%;
+    }
+}

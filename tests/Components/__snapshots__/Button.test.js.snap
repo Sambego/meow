@@ -1,0 +1,1 @@
+exports[`Button should render correctly 1`] = `"<button class><span></span></button>"`;

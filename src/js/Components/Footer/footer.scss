@@ -1,0 +1,28 @@
+/**
+ * The footer component.
+ */
+
+@import "../../../scss/config/colors";
+
+.footer {
+    position: fixed;
+    z-index: 1;
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+    padding: 1rem 2rem;
+
+    background: $primary;
+
+    &__twitter {
+        float: right;
+
+        color: $grey;
+        text-decoration: none;
+    }
+
+    &__icon {
+        margin: .2rem .5rem 0 0;
+    }
+}

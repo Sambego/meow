@@ -1,0 +1,33 @@
+/**
+ * Normalize some styles accross browsers.
+ */
+
+/**
+ * Enable box-sizing: border-box by default.
+ */
+* {
+    box-sizing: border-box;
+}
+
+/**
+ * Set the html font-size to 10px, this makes the calculation of REM values
+ * easier.
+ * Set the default font-family;
+ */
+html {
+    font-size: 10px;
+}
+
+/**
+ * Reset the body font-size to a default 1.6rem (16px).
+ */
+body {
+    padding: 0;
+    margin: 0;
+
+    background: $blue-light;
+
+    font-size: $font-size;
+    font-family: $font-family;
+    color: $font-color;
+}

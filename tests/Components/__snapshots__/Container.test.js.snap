@@ -1,0 +1,1 @@
+exports[`Container should render correctly 1`] = `"<div><h1>Content</h1></div>"`;

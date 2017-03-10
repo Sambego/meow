@@ -1,0 +1,19 @@
+/**
+ * Base stylesheet, use this file to import other scss file.
+ * Never declare styles in this file.
+ *
+ * Component styles will be included in the componenent themselve.
+ */
+
+/**
+ * Variables.
+ */
+@import "config/colors";
+@import "config/fonts";
+@import "config/typo";
+
+/**
+ * Base styles.
+ */
+@import "base/normalize";
+@import "base/typo";

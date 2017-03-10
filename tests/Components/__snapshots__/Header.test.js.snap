@@ -1,0 +1,1 @@
+exports[`Header should render correctly 1`] = `"<header><h1>Your browser rocks!</h1></header>"`;

@@ -1,0 +1,30 @@
+/**
+ * Typography styles.
+ */
+
+/**
+ * Remove the default margin from text elements.
+ */
+p,
+h1,
+h2,
+h3 {
+    margin: 0 0 1.5rem 0;
+}
+
+/**
+ * Strong styles
+ */
+strong {
+    color: $blue-dark;
+}
+
+/**
+ * Pre styles
+ */
+pre {
+    overflow: auto;
+    margin: 0;
+
+    font-size: 1.6rem;
+}

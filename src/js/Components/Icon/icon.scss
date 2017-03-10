@@ -1,0 +1,53 @@
+/**
+ * The icon component.
+ */
+
+@import "../../../scss/config/colors";
+
+@mixin size($name, $size) {
+    &--#{$name} {
+        width: $size;
+        height: $size;
+        line-height: $size;
+
+        svg {
+            width: $size;
+            height: $size;
+        }
+    }
+}
+
+$size-huge: 21rem;
+$size-small: 2rem;
+$size-tiny: .8rem;
+
+.icon {
+    height: 2.4rem;
+    width: 2.4rem;
+    display: inline-block;
+
+    rect,
+    circle,
+    path,
+    line,
+    polygon {
+        fill: currentColor;
+    }
+
+    svg {
+        width: 2.4rem;
+        height: auto;
+    }
+
+    &-exposed-folder {
+        .exposed {
+            path {
+                fill: rgba($black, 0.3);
+            }
+        }
+    }
+
+    @include size('huge', $size-huge);
+    @include size('small', $size-small);
+    @include size('tiny', $size-tiny);
+}
