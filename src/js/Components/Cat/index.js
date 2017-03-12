@@ -1,15 +1,22 @@
-import {h, render} from 'preact';
+import {h, render, Component} from 'preact';
 import {Icon} from '../';
 import styles from './cat.scss';
+import {Cat as CatService} from '../../Services';
 
-const Cat = () => {
-    const src = require('../../../icons/poes.svg');
+export default class Cat extends Component {
+    constructor(...props) {
+        super(...props);
 
-    return (
-        <div dangerouslySetInnerHTML={{__html: src}} className={styles.cat} />
-    );
+        this.state = {
+            cat: CatService.random(),
+        };
+
+        CatService.on(cat => this.setState({cat}));
+    }
+
+    render() {
+        return (
+            <div dangerouslySetInnerHTML={{__html: this.state.cat}} className={styles.cat} />
+        );
+    }
 };
-
-Cat.propTypes = {};
-
-export default Cat;
