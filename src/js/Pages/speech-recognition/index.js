@@ -1,51 +1,48 @@
 import {h, render, Component} from 'preact';
 import linkRef from 'linkref';
-import {Slide, Bubbles, Bubble} from '../../Components';
-import {Speech} from '../../Services';
-import Keyboard from '../../Services/Keyboard';
+import {BubbleSlide, Bubble, BubbleCollection, SpeechRecognition, Loader} from '../../Components';
 
-export default class SpeechecognitionPage extends Component {
-    goToPreviousPage = () => {
-        this.refs.slide.previous();
+export default class SpeechRecognitionPage extends Component {
+    constructor(...props) {
+        super(...props);
+
+        this.state = {
+            speechRegnitionInProcess: false,
+            recognizedText: '',
+        };
     }
 
-    goToNextPage = () => {
-        this.refs.slide.next();
-    }
+    onSpeechRecognitionStart() {
+        this.setState({
+            speechRegnitionInProcess: true,
+        });
+    };
 
-    getPreviousAction() {
-        if (!this.refs.bubbles.firstBubbleIsShown()) {
-            return this.refs.bubbles.nextBubble();
-        }
+    setRecognizedSpeech(result) {
+        this.setState({
+            speechRegnitionInProcess: false,
+            recognizedText: result.transcript,
+        });
 
-        return this.goToPreviousPage();
-    }
-
-    getNextAction() {
-        if (!this.refs.bubbles.lastBubbleIsShown()) {
-            return this.refs.bubbles.nextBubble();
-        }
-
-        return this.goToNextPage();
-    }
-
-    componentWillMount() {
-        this.KeyboardLeftListener = Keyboard.on('left', () => this.getPreviousAction());
-        this.KeyboardRightListener = Keyboard.on('right', () => this.getNextAction());
-    }
-
-    componentWillUnmount() {
-        Keyboard.off(this.KeyboardLeftListener);
-        Keyboard.off(this.KeyboardRightListener);
-    }
+        console.log('text', this.state.recognizedText);
+        this.refs.bubbleSlide.getNextAction();
+    };
 
     render() {
         return (
-            <Slide previous="/speech-code" next="speech-recognition-code" ref={linkRef(this, 'slide')}>
-                <Bubbles ref={linkRef(this, 'bubbles')} >
-                    <Bubble>Speech recognition is cool</Bubble>
-                </Bubbles>
-            </Slide>
+            <BubbleSlide previous="speech-code"  ref={linkRef(this, 'bubbleSlide')}>
+                <Bubble>So Sam, you know I can talk to you trough the browser, but did you know you can also talk to me? Thats right, I can understand the words you speak to me. Press the button below and say something.</Bubble>
+                <BubbleCollection>
+                    <SpeechRecognition onSpeechRecognitionStart={::this.onSpeechRecognitionStart} onSpeechRecognized={::this.setRecognizedSpeech}></SpeechRecognition>
+                    {this.state.speechRegnitionInProcess && <Bubble me>
+                        <Loader/>
+                    </Bubble>}
+                </BubbleCollection>
+                <BubbleCollection>
+                    <Bubble me>{this.state.recognizedText}</Bubble>
+                    <Bubble>You would know how I’m doing if you wouldn’t be somewhere else all the time!</Bubble>
+                </BubbleCollection>
+            </BubbleSlide>
         );
     }
 };

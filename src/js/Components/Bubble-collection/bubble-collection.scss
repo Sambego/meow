@@ -1,0 +1,16 @@
+/**
+ * The bubble collection.
+ */
+
+@import "../../../scss/config/colors";
+
+.bubble-collection {
+    display: block;
+
+    &__inner {
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+    }
+}

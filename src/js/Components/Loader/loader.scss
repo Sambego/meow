@@ -1,0 +1,45 @@
+/**
+ * The Speech pages.
+ */
+
+@import "../../../scss/config/colors";
+
+.loader {
+    display: inline-block;
+
+    &__indicator {
+        animation: fade 3s infinite;
+
+        display: inline-block;
+        width: 1rem;
+        height: 1rem;
+
+        background: $black;
+
+        border-radius: 50%;
+
+        &:not(:last-child) {
+            margin: 0 1rem 0 0;
+        }
+
+        &:nth-child(2) {
+            animation-delay: .33s;
+        }
+
+        &:nth-child(3) {
+            animation-delay: .66s;
+        }
+    }
+}
+
+@keyframes fade {
+    0% {
+        opacity:1;
+    }
+    50% {
+        opacity:0;
+    }
+    100% {
+        opacity:1;
+    }
+}

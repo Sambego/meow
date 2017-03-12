@@ -1,5 +1,6 @@
 export default class Speech {
     static synth = window.speechSynthesis;
+    static speechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
 
     static speak(input) {
         const utterThis = new SpeechSynthesisUtterance(input);
@@ -23,4 +24,18 @@ export default class Speech {
             window.speechSynthesis.onvoiceschanged = doSpeak;
         }
     };
+
+    static recognize() {
+        return new Promise((resolve, reject) => {
+            const recognition = new this.speechRecognition();
+
+            recognition.lang = 'en-US';
+            recognition.interimResults = false;
+            recognition.maxAlternatives = 1;
+            recognition.onresult = event => resolve(event.results[0][0]);
+            recognition.onerror = error => reject(error);
+
+            recognition.start();
+        });
+    }
 };
