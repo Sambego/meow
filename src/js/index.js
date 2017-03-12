@@ -7,6 +7,7 @@ import {
     StartPage,
     SpeechPage,
     SpeechCodePage,
+    SpeechRecognitionPage,
 } from './Pages';
 
 render((
@@ -16,6 +17,7 @@ render((
                 <StartPage path="/" />
                 <SpeechPage path="/speech" />
                 <SpeechCodePage path="/speech-code" />
+                <SpeechRecognitionPage path="/speech-recognition" />
             </Router>
         </Container>
 

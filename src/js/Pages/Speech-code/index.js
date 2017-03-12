@@ -46,7 +46,7 @@ export default class SpeechCodePage extends Component {
 
     render() {
         return (
-            <Slide previous="speech" ref={linkRef(this, 'slide')} >
+            <Slide previous="speech" next="speech-recognition" ref={linkRef(this, 'slide')} >
                 <Bubbles ref={linkRef(this, 'bubbles')} >
                     <Bubble>So let's see how this speech API works.</Bubble>
                     <Bubble>We start by creating a new speech synthesizer.</Bubble>
