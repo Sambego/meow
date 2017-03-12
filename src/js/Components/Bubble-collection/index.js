@@ -1,6 +1,6 @@
 import {h, render} from 'preact';
 import {element} from 'proptypes';
-import styles from  './Bubble-collection.scss';
+import styles from  './bubble-collection.scss';
 
 const BubbleCollection = ({children}) => {
     return (
