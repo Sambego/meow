@@ -1,0 +1,21 @@
+/**
+ * The map component.
+ */
+
+@import "../../../scss/config/colors";
+
+.map {
+    position: relative;
+
+    &__marker {
+        transform: translate3d(-50%, -50%, 0);
+
+        position: absolute;
+        top: 50%;
+        left: 50%;
+
+        svg * {
+            fill: $blue-dark;
+        }
+    }
+}

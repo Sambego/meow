@@ -6,7 +6,7 @@ const SpeechRecognitionCodePage = () => {
     const codeExample2 = '// Set The language of the text that should be recognized\nrecognition.lang = \'en-US\';\n\n// Should the SpeechRecognition API send intermediate results\nrecognition.interimResults = false;\n\n// Handle the result and error events\nrecognition.onresult = event => handleResult(event);\nrecognition.onerror = error => handleError(error);';
 
     return (
-        <BubbleSlide previous="speech-recognition">
+        <BubbleSlide previous="speech-recognition" next="location">
             <Bubble>Let me teach you how to setup speech-recognition.</Bubble>
             <Bubble>It is important to know that you need internet access to use this API!</Bubble>
             <Bubble>First we need a new SpeechRecognition instance.</Bubble>

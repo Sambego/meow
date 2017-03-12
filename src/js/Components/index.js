@@ -9,5 +9,7 @@ export Container from './Container';
 export Footer from './Footer';
 export Icon from './Icon';
 export Loader from './Loader';
+export Location from './Location';
+export Map from './Map';
 export Slide from './Slide';
 export SpeechRecognition from './Speech-recognition';

@@ -1,7 +1,7 @@
 import {h, render, Component} from 'preact';
 import linkRef from 'linkref';
 import {Slide, Bubbles} from '../../Components';
-import Keyboard from '../../Services/Keyboard';
+import {Keyboard} from '../../Services';
 
 export default class BubbleSlide extends Component {
     goToPreviousPage = () => {

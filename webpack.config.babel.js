@@ -1,5 +1,6 @@
 import webpack from 'webpack';
 import path from 'path';
+import DotenvPlugin from 'webpack-dotenv-plugin';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import CopyWebpackPlugin from 'copy-webpack-plugin';
@@ -32,7 +33,7 @@ const createConfig = (env = 'development') => {
                     use: ['css-loader'],
                 }),
             }, {
-                test: /\.(woff|woff2)$/,
+                test: /\.(png|woff|woff2)$/,
                 use: 'file-loader?name=[name].[ext]',
             }, {
                 test: /\.(xml|html|txt|md)$/,
@@ -44,6 +45,10 @@ const createConfig = (env = 'development') => {
         },
         devtool: 'source-map',
         plugins: [
+            new DotenvPlugin({
+                sample: './.env.example',
+                path: './.env',
+            }),
             new webpack.LoaderOptionsPlugin({
                 minimize: true,
                 debug: false,

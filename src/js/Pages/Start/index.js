@@ -2,7 +2,7 @@ import {h, render, Component} from 'preact';
 import linkRef from 'linkref';
 import {Slide} from '../../Components';
 import styles from  './start.scss';
-import Keyboard from '../../Services/Keyboard';
+import {Keyboard} from '../../Services';
 
 export default class StartPage extends Component {
     constructor(...props) {

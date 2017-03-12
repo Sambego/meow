@@ -1,6 +1,5 @@
 import {h, render} from 'preact';
 import {BubbleSlide, Bubble} from '../../Components';
-import styles from  './speech.scss';
 import {Speech} from '../../Services';
 
 const SpeechPage = () => {

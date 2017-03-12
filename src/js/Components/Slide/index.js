@@ -3,7 +3,7 @@ import {element, string} from 'proptypes';
 import Router from 'preact-router';
 import keycode from 'keycode';
 import styles from './slide.scss';
-import Cat from '../../Services/Cat';
+import {Cat} from '../../Services';
 
 export default class Slide extends Component  {
     static propTypes = {
