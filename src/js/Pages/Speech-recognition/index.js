@@ -24,7 +24,6 @@ export default class SpeechRecognitionPage extends Component {
             recognizedText: result.transcript,
         });
 
-        console.log('text', this.state.recognizedText);
         this.refs.bubbleSlide.getNextAction();
     };
 
