@@ -10,6 +10,7 @@ import {
     SpeechRecognitionPage,
     SpeechRecognitionCodePage,
     LocationPage,
+    LocationCodePage,
 } from './Pages';
 
 render((
@@ -22,6 +23,7 @@ render((
                 <SpeechRecognitionPage path="/speech-recognition" />
                 <SpeechRecognitionCodePage path="/speech-recognition-code" />
                 <LocationPage path="/location" />
+                <LocationCodePage path="/location-code" />
             </Router>
         </Container>
 

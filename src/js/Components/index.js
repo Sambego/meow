@@ -11,5 +11,6 @@ export Icon from './Icon';
 export Loader from './Loader';
 export Location from './Location';
 export Map from './Map';
+export Notification from './Notification';
 export Slide from './Slide';
 export SpeechRecognition from './Speech-recognition';
