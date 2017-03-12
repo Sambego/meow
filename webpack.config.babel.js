@@ -2,6 +2,7 @@ import webpack from 'webpack';
 import path from 'path';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
+import CopyWebpackPlugin from 'copy-webpack-plugin';
 
 const createConfig = (env = 'development') => {
     return {
@@ -55,6 +56,14 @@ const createConfig = (env = 'development') => {
             new HtmlWebpackPlugin({
                 template: './src/index.html',
             }),
+            new CopyWebpackPlugin([{
+                context: './src/favicon/',
+                from: '**/*',
+            }, {
+                from: './src/manifest.json',
+            }, {
+                from: './src/browserconfig.xml',
+            }]),
         ],
         devServer: {
             port: process.env.PORT || 8080,

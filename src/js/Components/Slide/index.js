@@ -2,50 +2,32 @@ import {h, render, Component} from 'preact';
 import {element, string} from 'proptypes';
 import Router from 'preact-router';
 import keycode from 'keycode';
-import {SlideNav} from '../';
 import styles from './slide.scss';
 
-const Slide = ({children, previous, next}) => {
-    const keys = {
-        left: () => {
-            if (previous) {
-                Router.route(previous);
-                window.removeEventListener('keyup', onKeyup);
-            }
-        },
-        right: () => {
-            if (next) {
-                Router.route(next);
-                window.removeEventListener('keyup', onKeyup);
-            }
-        },
+export default class Slide extends Component  {
+    static propTypes = {
+        children: element.isRequired,
+        previous: string,
+        next: string,
     };
 
-    const navigate = event => {
-        const listener = keys[keycode(event)];
-
-        if (typeof listener !== 'undefined') {
-            listener();
+    previous() {
+        if (this.props.previous) {
+            Router.route(this.props.previous);
         }
-    };
+    }
 
-    const onKeyup = event => navigate(event);
+    next() {
+        if (this.props.next) {
+            Router.route(this.props.next);
+        }
+    }
 
-    window.addEventListener('keyup', onKeyup);
-
-    return (
-        <section className={styles.slide}>
-            {previous && <SlideNav direction="left" to={previous} />}
-            {next && <SlideNav direction="right" to={next} />}
-            {children}
-        </section>
-    );
+    render() {
+        return (
+            <section className={styles.slide}>
+                {this.props.children}
+            </section>
+        );
+    }
 };
-
-Slide.propTypes = {
-    children: element.isRequired,
-    previous: string,
-    next: string,
-};
-
-export default Slide;

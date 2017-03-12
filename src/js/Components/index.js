@@ -7,4 +7,3 @@ export Container from './Container';
 export Footer from './Footer';
 export Icon from './Icon';
 export Slide from './Slide';
-export SlideNav from './SlideNav';
