@@ -1,6 +1,7 @@
 import {h, render} from 'preact';
 import {BubbleSlide, Bubble, Code, Notification} from '../../Components';
 import IconHoly from '../../../icons/favicon-holy.png';
+import IconBigEyes from '../../../icons/favicon-big-eyes.png';
 
 const LocationCode = () => {
     const codeExample1 = 'navigator.geolocation.getCurrentPosition(position => {\n    console.log(`Your current position: ${position.coords}`);\n});';
@@ -19,7 +20,7 @@ const LocationCode = () => {
             <Bubble>Once we got our current position form the geolocation API, we can any map provider to do cool things with our coordinates.</Bubble>
             <Notification message="Hey Sam, when are you comming home, I'm hungry!" />
             <Notification message="Oh, by the way, these holes in the couch were there when I got here 😇." icon={IconHoly}/>
-            <Notification message="And yeah, I found out how to send notifications in the browser." />
+            <Notification message="And yeah, I found out how to send notifications in the browser." icon={IconBigEyes}/>
         </BubbleSlide>
     );
 };
