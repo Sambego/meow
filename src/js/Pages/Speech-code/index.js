@@ -4,13 +4,6 @@ import {Slide, Bubbles, Bubble, Code} from '../../Components';
 import Keyboard from '../../Services/Keyboard';
 
 export default class SpeechCodePage extends Component {
-    constructor(...props) {
-        super(...props);
-
-        this.KeyboardLeftListener = Keyboard.on('left', this.goToPreviousPage);
-        this.KeyboardRightListener = Keyboard.on('right', this.goToNextPage);
-    }
-
     codeExample1 = 'const synth = window.speechSynthesis;';
     codeExample2 = 'const utterThis = new SpeechSynthesisUtterance(\'Hi everybody!\');';
     codeExample3 = 'synth.speak(utterThis);';
@@ -25,6 +18,27 @@ export default class SpeechCodePage extends Component {
         this.refs.slide.next();
     }
 
+    getPreviousAction() {
+        if (!this.refs.bubbles.firstBubbleIsShown()) {
+            return this.refs.bubbles.previousBubble();
+        }
+
+        return this.goToPreviousPage();
+    }
+
+    getNextAction() {
+        if (!this.refs.bubbles.lastBubbleIsShown()) {
+            return this.refs.bubbles.nextBubble();
+        }
+
+        return this.goToNextPage();
+    }
+
+    componentWillMount() {
+        this.KeyboardLeftListener = Keyboard.on('left', () => this.getPreviousAction());
+        this.KeyboardRightListener = Keyboard.on('right', () => this.getNextAction());
+    }
+
     componentWillUnmount() {
         Keyboard.off(this.KeyboardLeftListener);
         Keyboard.off(this.KeyboardRightListener);
@@ -33,7 +47,7 @@ export default class SpeechCodePage extends Component {
     render() {
         return (
             <Slide previous="speech" ref={linkRef(this, 'slide')} >
-                <Bubbles>
+                <Bubbles ref={linkRef(this, 'bubbles')} >
                     <Bubble>So let's see how this speech API works.</Bubble>
                     <Bubble>We start by creating a new speech synthesizer.</Bubble>
                     <Bubble full>

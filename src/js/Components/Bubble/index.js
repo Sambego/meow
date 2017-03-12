@@ -1,29 +1,36 @@
-import {h, render} from 'preact';
-import {element, string, boolean} from 'proptypes';
+import {h, render, Component} from 'preact';
+import {element, boolean, func, isRequired} from 'proptypes';
 import classnames from 'classnames';
 import styles from './bubble.scss';
 
-const Bubble = ({children, me, full}) => {
-    const classes = classnames(styles.bubble, {
-        [styles['bubble--me']]: me,
-        [styles['bubble--full']]: full,
-    });
+export default class Bubble extends Component {
+    static propTypes = {
+        children: element.isRequired,
+        full: boolean,
+        me: boolean,
+        onShow: func.isRequired,
+    };
 
-    return (
-        <div className={classes}>
-            {children}
-        </div>
-    );
+    static defaultProps = {
+        me: false,
+    };
+
+    componentWillMount() {
+        if (this.props.onShow) {
+            this.props.onShow();
+        }
+    }
+
+    render() {
+        const classes = classnames(styles.bubble, {
+            [styles['bubble--me']]: this.props.me,
+            [styles['bubble--full']]: this.props.full,
+        });
+
+        return (
+            <div className={classes}>
+                {this.props.children}
+            </div>
+        );
+    }
 };
-
-Bubble.propTypes = {
-    children: element,
-    full: boolean,
-    me: boolean,
-};
-
-Bubble.defaultProps = {
-    me: false,
-};
-
-export default Bubble;

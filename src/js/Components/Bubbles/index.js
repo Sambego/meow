@@ -1,30 +1,16 @@
 import {h, render, Component} from 'preact';
-import {element, func} from 'proptypes';
-import keycode from 'keycode';
+import {element} from 'proptypes';
 import styles from './bubbles.scss';
 
 export default class Bubbles extends Component {
     static propTypes = {
         children: element,
-        onNextBubble: func,
     };
 
-    constructor(...props) {
-        super(...props);
-
+    componentWillMount() {
         this.state = {
             shownBubbles: 1,
         };
-
-        if (typeof this.props.onNextBubble !== 'undefined') {
-            this.props.onNextBubble(this.state.shownBubbles);
-        }
-
-        window.addEventListener('keyup', this.nextBubbleInstance);
-    }
-
-    componentWillUnmount() {
-        window.removeEventListener('keyup', this.nextBubbleInstance);
     }
 
     renderBubbles() {
@@ -37,17 +23,21 @@ export default class Bubbles extends Component {
         });
     };
 
-    nextBubble(event) {
-        if (this.state.shownBubbles <= this.props.children.length && keycode(event) === 'up') {
-            this.setState({shownBubbles: (this.state.shownBubbles + 1)});
+    previousBubble() {
+        this.setState({shownBubbles: (this.state.shownBubbles - 1)});
+    }
 
-            if (typeof this.props.onNextBubble !== 'undefined') {
-                this.props.onNextBubble(this.state.shownBubbles);
-            }
-        }
-    };
+    nextBubble() {
+        this.setState({shownBubbles: (this.state.shownBubbles + 1)});
+    }
 
-    nextBubbleInstance = event => this.nextBubble(event);
+    firstBubbleIsShown() {
+        return this.state.shownBubbles === 1;
+    }
+
+    lastBubbleIsShown() {
+        return this.state.shownBubbles === this.props.children.length;
+    }
 
     render() {
         return (
