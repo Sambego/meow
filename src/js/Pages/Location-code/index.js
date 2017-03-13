@@ -1,7 +1,7 @@
 import {h, render} from 'preact';
 import {BubbleSlide, Bubble, Code, Notification} from '../../Components';
 import IconHoly from '../../../icons/favicon-holy.png';
-import IconBigEyes from '../../../icons/favicon-big-eyes.png';
+import IconBigEyes from '../../../icons/favicon-robot.png';
 
 const LocationCode = () => {
     const codeExample1 = 'navigator.geolocation.getCurrentPosition(position => {\n    console.log(`Your current position: ${position.coords}`);\n});';
