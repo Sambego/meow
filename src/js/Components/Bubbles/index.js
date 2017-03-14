@@ -8,15 +8,7 @@ export default class Bubbles extends Component {
     };
 
     componentWillMount() {
-        this.setState({
-            shownBubbles: 1,
-        });
-    }
-
-    componentWillUpdate() {
-        this.setState({
-            shownBubbles: 1,
-        });
+        this.reset();
     }
 
     renderBubbles() {
@@ -43,6 +35,12 @@ export default class Bubbles extends Component {
 
     lastBubbleIsShown() {
         return this.state.shownBubbles === this.props.children.length;
+    }
+
+    reset() {
+        this.setState({
+            shownBubbles: 1,
+        });
     }
 
     render() {

@@ -1,28 +1,26 @@
-import {h, render} from 'preact';
+import {h, render, Component} from 'preact';
 import {BubbleSlide, Bubble} from '../../Components';
 import {Speech} from '../../Services';
 
-const SpeechPage = () => {
-    const conf = 'Front Trends';
-    const bubble1 = `Hi ${conf}, did you know the browser could talk? Cool huh!`;
-    const bubble2 = 'The web speech API converts text to spoken words. You can even choose my voice, since I\'m a female cat, I\'ll be talking with a female voice. Meow!';
+export default class SpeechPage extends Component {
+    conf = 'Front Trends';
+    bubble1 = `Hi ${this.conf}, did you know the browser could talk? Cool huh!`;
+    bubble2 = 'The web speech API converts text to spoken words. You can even choose my voice, since I\'m a female cat, I\'ll be talking with a female voice. Meow!';
 
-    const speakBubble1 = () => {
-        Speech.speak(bubble1);
+    speakBubble1() {
+        Speech.speak(this.bubble1);
     };
 
-    const speakBubble2 = () => {
-        Speech.speak(bubble2);
+    speakBubble2() {
+        Speech.speak(this.bubble2);
     };
 
-    return (
-        <BubbleSlide previous="/" next="speech-code" >
-            <Bubble onShow={speakBubble1}>{bubble1}</Bubble>
-            <Bubble onShow={speakBubble2}>{bubble2}</Bubble>
-        </BubbleSlide>
-    );
+    render() {
+        return (
+            <BubbleSlide previous="/" next="speech-code" >
+                <Bubble onShow={::this.speakBubble1}>{this.bubble1}</Bubble>
+                <Bubble onShow={::this.speakBubble2}>{this.bubble2}</Bubble>
+            </BubbleSlide>
+        );
+    }
 };
-
-SpeechPage.propTypes = {};
-
-export default SpeechPage;

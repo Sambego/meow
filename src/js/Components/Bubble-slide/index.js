@@ -28,12 +28,18 @@ export default class BubbleSlide extends Component {
         return this.goToNextPage();
     }
 
+    resetBubbles() {
+        this.refs.bubbles.reset();
+    }
+
     componentWillMount() {
         this.KeyboardLeftListener = Keyboard.on('left', () => this.getPreviousAction());
         this.KeyboardRightListener = Keyboard.on('right', () => this.getNextAction());
     }
 
     componentWillUnmount() {
+        this.resetBubbles();
+
         Keyboard.off(this.KeyboardLeftListener);
         Keyboard.off(this.KeyboardRightListener);
     }
