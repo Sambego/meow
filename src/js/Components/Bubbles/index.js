@@ -8,9 +8,15 @@ export default class Bubbles extends Component {
     };
 
     componentWillMount() {
-        this.state = {
+        this.setState({
             shownBubbles: 1,
-        };
+        });
+    }
+
+    componentWillUpdate() {
+        this.setState({
+            shownBubbles: 1,
+        });
     }
 
     renderBubbles() {

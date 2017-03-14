@@ -1,5 +1,6 @@
 export LocationPage from './Location';
 export LocationCodePage from './Location-code';
+export NotificationPage from './Notification';
 export SpeechPage from './Speech';
 export SpeechCodePage from './Speech-code';
 export SpeechRecognitionPage from './Speech-recognition';

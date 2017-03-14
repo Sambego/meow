@@ -11,6 +11,7 @@ import {
     SpeechRecognitionCodePage,
     LocationPage,
     LocationCodePage,
+    NotificationPage,
 } from './Pages';
 
 render((
@@ -24,6 +25,7 @@ render((
                 <SpeechRecognitionCodePage path="/speech-recognition-code" />
                 <LocationPage path="/location" />
                 <LocationCodePage path="/location-code" />
+                <NotificationPage path="/notification" />
             </Router>
         </Container>
 
