@@ -3,6 +3,7 @@
  */
 
 @import "../../../scss/config/colors";
+@import "../../../scss/config/typo";
 
 @mixin size($name, $size) {
     &--#{$name} {
@@ -19,6 +20,7 @@
 
 $size-huge: 21rem;
 $size-small: 2rem;
+$size-text: $font-size;
 $size-tiny: .8rem;
 
 .icon {
@@ -49,5 +51,6 @@ $size-tiny: .8rem;
 
     @include size('huge', $size-huge);
     @include size('small', $size-small);
+    @include size('text', $size-text);
     @include size('tiny', $size-tiny);
 }

@@ -1,6 +1,5 @@
 import {h, render} from 'preact';
 import {BubbleSlide, Bubble, BubbleCollection, Code, Notification} from '../../Components';
-import Icon from '../../../icons/favicon.png';
 
 const NotificationPage = () => {
     const codeExample1 = 'Notification.requestPermission(permission => {\n    if (permission === \'granted\') {\n        // Permission granted!\n    }\n});';
@@ -8,7 +7,7 @@ const NotificationPage = () => {
     const codeExample3 = 'notification.onclick = event => {\n    // Do something cool!\n}';
 
     return (
-        <BubbleSlide previous="location-code" next="/">
+        <BubbleSlide previous="location-code" next="battery">
             <Bubble>Showing a notification is pretty easy, but before we can do so, we need to ask for the persmission to show it.</Bubble>
             <Bubble full>
                 <Code code={codeExample1} />

@@ -12,6 +12,7 @@ import {
     LocationPage,
     LocationCodePage,
     NotificationPage,
+    BatteryPage,
 } from './Pages';
 
 render((
@@ -26,6 +27,7 @@ render((
                 <LocationPage path="/location" />
                 <LocationCodePage path="/location-code" />
                 <NotificationPage path="/notification" />
+                <BatteryPage path="/battery" />
             </Router>
         </Container>
 

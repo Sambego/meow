@@ -31,7 +31,7 @@ Icon.propTypes = {
     className: string,
     color: string,
     name: string.isRequired,
-    size: oneOf(['tiny', 'small', 'medium']),
+    size: oneOf(['tiny', 'text', 'small', 'medium']),
     style: object,
 };
 

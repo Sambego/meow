@@ -1,3 +1,4 @@
+export BatteryPage from './Battery';
 export LocationPage from './Location';
 export LocationCodePage from './Location-code';
 export NotificationPage from './Notification';

@@ -1,3 +1,4 @@
+export Battery from './Battery';
 export Bubble from './Bubble';
 export Bubbles from './Bubbles';
 export BubbleCollection from './Bubble-collection';

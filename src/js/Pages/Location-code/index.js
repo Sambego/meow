@@ -3,7 +3,7 @@ import {BubbleSlide, Bubble, Code, Notification} from '../../Components';
 import IconHoly from '../../../icons/favicon-holy.png';
 import IconBigEyes from '../../../icons/favicon-robot.png';
 
-const LocationCode = () => {
+const LocationCodePage = () => {
     const codeExample1 = 'navigator.geolocation.getCurrentPosition(position => {\n    console.log(`Your current position: ${position.coords}`);\n});';
     const codeExample2 = 'const latLng = new maps.LatLng(coordinates.coords.latitude, coordinates.coords.longitude);\nconst geocoder = new maps.Geocoder();\n\ngeocoder.geocode({latLng}, (results, status) => {\n    if (status === maps.GeocoderStatus.OK) {\n        console.logs(`You current position is: ${results.find(result => result.types.includes(\'locality\'))[\'formatted_address\'],}`)\n    }\n});';
 
@@ -27,6 +27,6 @@ const LocationCode = () => {
     );
 };
 
-LocationCode.propTypes = {};
+LocationCodePage.propTypes = {};
 
-export default LocationCode;
+export default LocationCodePage;
