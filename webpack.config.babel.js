@@ -77,9 +77,7 @@ const createConfig = (env = 'development') => {
             publicPath: '/',
             contentBase: './src',
             historyApiFallback: true,
-            https: false,
-            key: fs.readFileSync('./key.pem', 'utf8'),
-            cert: fs.readFileSync('./server.crt', 'utf8'),
+            https: false
         },
     };
 };
