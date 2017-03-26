@@ -1,5 +1,5 @@
 import {h, render, Component} from 'preact';
-import {BubbleSlide, Bubble} from '../../Components';
+import {BubbleSlide, BubbleCollection, Bubble} from '../../Components';
 import {Cat} from '../../Services';
 
 export default class AboutPage extends Component {
@@ -13,9 +13,11 @@ export default class AboutPage extends Component {
     render() {
         return (
             <BubbleSlide previous="/" next="speech">
-                <Bubble>My name is Sam Bellen.</Bubble>
-                <Bubble>I'm a software engineer at madewithlove.</Bubble>
-                <Bubble>You can find me online as <strong>Sambego</strong>.</Bubble>
+                <BubbleCollection>
+                    <Bubble>My name is Sam Bellen.</Bubble>
+                    <Bubble>I'm a software engineer at madewithlove.</Bubble>
+                    <Bubble>You can find me online as <strong>Sambego</strong>.</Bubble>
+                </BubbleCollection>
             </BubbleSlide>
         );
     }
