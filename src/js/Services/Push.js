@@ -71,18 +71,6 @@ export default class Push {
 
             this.messageCallbacks.forEach(callback => callback(payload));
         });
-
-        this.messaging.setBackgroundMessageHandler(payload => {
-            console.log('✔️  Received background push message ', payload);
-
-            const notificationTitle = 'Meow, here is a background message!';
-            const notificationOptions = {
-                body: 'Background Message body.',
-                icon: Icon,
-            };
-
-            return self.registration.showNotification(notificationTitle, notificationOptions);
-        });
     }
 
     onTokenRefresh() {

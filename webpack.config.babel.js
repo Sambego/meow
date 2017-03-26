@@ -69,6 +69,8 @@ const createConfig = (env = 'development') => {
                 from: './src/manifest.json',
             }, {
                 from: './src/browserconfig.xml',
+            }, {
+                from: './src/js/firebase-messaging-sw.js',
             }]),
         ],
         devServer: {
@@ -77,7 +79,7 @@ const createConfig = (env = 'development') => {
             publicPath: '/',
             contentBase: './src',
             historyApiFallback: true,
-            https: false
+            https: false,
         },
     };
 };
