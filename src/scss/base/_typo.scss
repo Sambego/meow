@@ -12,6 +12,22 @@ h3 {
     margin: 0 0 1.5rem 0;
 }
 
+h1 {
+    padding: 15rem 0 10rem 0;
+
+    color: $blue;
+    font-size: 6.9rem;
+    text-align: center;
+    line-height: 150%;
+}
+
+/**
+ * Anchor styles
+ */
+a {
+    color: $primary;
+}
+
 /**
  * Strong styles
  */
