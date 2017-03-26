@@ -5,6 +5,7 @@ import Router from 'preact-router';
 import {Container, Footer} from './Components';
 import {
     StartPage,
+    AboutPage,
     SpeechPage,
     SpeechCodePage,
     SpeechRecognitionPage,
@@ -24,6 +25,7 @@ render((
         <Container>
             <Router>
                 <StartPage path="/" />
+                <AboutPage path="/about" />
                 <SpeechPage path="/speech" />
                 <SpeechCodePage path="/speech-code" />
                 <SpeechRecognitionPage path="/speech-recognition" />

@@ -6,6 +6,8 @@ export default class Cat {
         require('../../icons/poes-edge.svg'),
     ];
 
+    static sam = require('../../icons/me.svg');
+
     static listeners = [];
 
     static random() {
@@ -22,5 +24,9 @@ export default class Cat {
         const cat = this.random();
 
         this.listeners.forEach(listener => listener(cat));
+    }
+
+    static me() {
+        this.listeners.forEach(listener => listener(Cat.sam));
     }
 }

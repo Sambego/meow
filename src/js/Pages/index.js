@@ -1,3 +1,4 @@
+export AboutPage from './About';
 export AcknowledgementPage from './Acknowledgement';
 export BatteryPage from './Battery';
 export LocationPage from './Location';
