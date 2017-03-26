@@ -3,7 +3,7 @@ import {BubbleSlide, Bubble} from '../../Components';
 import {Speech} from '../../Services';
 
 export default class SpeechPage extends Component {
-    conf = 'Front Trends';
+    conf = 'PHP Antwerp';
     bubble1 = `Hi ${this.conf}, did you know the browser could talk? Cool huh!`;
     bubble2 = 'The web speech API converts text to spoken words. You can even choose my voice, since I\'m a female cat, I\'ll be talking with a female voice. Meow!';
 
