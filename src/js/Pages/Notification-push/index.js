@@ -31,7 +31,7 @@ export default class NotificationPushPage extends Component {
             <BubbleSlide previous="notification" next="notification-push-code">
                 <BubbleCollection>
                     <Bubble>It is also possible to receive push notifications from a push server.</Bubble>
-                    <Button onClick={() => ::this.sendPushMessage('This message is comming from a remote push server. Cool huh?!')}>Send push notification</Button>
+                    <Button onClick={() => ::this.sendPushMessage('This message is comming from a remote push server. Does this blow your mind already?!')}>Send push notification</Button>
                 </BubbleCollection>
                 <Bubble>So what's the difference with regular notifications?</Bubble>
                 <Bubble>This message is came from a remote push server, letting us know something happend. I just show the notification to warn you about this event.</Bubble>
