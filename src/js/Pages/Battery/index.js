@@ -24,7 +24,7 @@ export default class BatteryPage extends Component {
 
     render() {
         return (
-            <BubbleSlide previous="notification-push" next="/"  ref={linkRef(this, 'bubbleSlide')}>
+            <BubbleSlide previous="notification-push-code" next="acknowledgements"  ref={linkRef(this, 'bubbleSlide')}>
                 <BubbleCollection>
                     <Bubble>Looks like your battery is pretty well charged, maybe you should unplug you power adapter?</Bubble>
                     <Bubble>{this.state.battery ? <Battery /> : <Loader />}</Bubble>
