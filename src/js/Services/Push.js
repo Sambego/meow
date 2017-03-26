@@ -18,7 +18,6 @@ export default class Push {
     messageCallbacks = [];
 
     requestPermission() {
-        console.log('__foo: 3');
         this.messaging = firebase.messaging();
 
         return this.messaging.requestPermission()
@@ -35,18 +34,24 @@ export default class Push {
     }
 
     getToken() {
-        this.messaging.getToken()
+        return this.messaging.getToken()
             .then(currentToken => {
                 if (currentToken) {
+                    this.token = currentToken;
+
                     return this.sendTokenToServer(currentToken)
                         .then(() => {
-                            console.log('✔️ Push notification setup complete.');
+                            console.log('✔️ Push notification setup complete. Token:', currentToken);
 
                             this.onTokenRefresh();
                             this.setupMessageEventListener();
+
+                            return currentToken;
                         })
                         .catch(error => {
                             console.log('❌ Something went wrong sending the toke to the server.', error);
+
+                            return false;
                         });
                 } else {
                     console.log('❌ No Instance ID token available. Request permission to generate one.');
@@ -61,8 +66,8 @@ export default class Push {
             });
     }
 
-    sendTokenToServer() {
-        return fetch(`https://iid.googleapis.com/iid/info/${this.token}?details=true&Authorization:key=${this.config.apiKey}`);
+    sendTokenToServer(token) {
+        return fetch(`https://iid.googleapis.com/iid/info/${token}?details=true&Authorization:key=${Push.config.apiKey}`);
     }
 
     setupMessageEventListener() {
@@ -92,5 +97,29 @@ export default class Push {
         if (callback) {
             this.messageCallbacks.push(callback);
         }
-    };
+    }
+
+    sendPushMessage(message) {
+        const headers = new Headers({
+            'Content-Type': 'application/json',
+            'Authorization': `key=${process.env.FIREBASE_MESSAGING_SERVER_KEY}`,
+        });
+
+        const body = JSON.stringify({
+            data: {
+                message,
+            },
+            to: this.token,
+        });
+
+        const params = {
+            method: 'POST',
+            headers,
+            mode: 'cors',
+            cache: 'default',
+            body,
+        };
+
+        return fetch('https://fcm.googleapis.com/fcm/send', params);
+    }
 }

@@ -12,9 +12,10 @@ import {
     LocationPage,
     LocationCodePage,
     NotificationPage,
+    NotificationPushPage,
+    NotificationPushCodePage,
     BatteryPage,
 } from './Pages';
-import {Push} from './Services';
 
 render((
     <div>
@@ -28,6 +29,8 @@ render((
                 <LocationPage path="/location" />
                 <LocationCodePage path="/location-code" />
                 <NotificationPage path="/notification" />
+                <NotificationPushPage path="/notification-push" />
+                <NotificationPushCodePage path="/notification-push-code" />
                 <BatteryPage path="/battery" />
             </Router>
         </Container>

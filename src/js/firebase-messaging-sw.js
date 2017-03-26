@@ -14,13 +14,11 @@ firebase.initializeApp({
 // messages.
 const messaging = firebase.messaging();
 
-messaging.setBackgroundMessageHandler(payload => {
-    console.log('✔️  Received background push message ', payload);
-
-    const notificationTitle = 'Meow, here is a background message!';
+messaging.setBackgroundMessageHandler(message => {
+    const notificationTitle = 'Meow, here is a push message!';
     const notificationOptions = {
-        body: 'Background Message body.',
-        icon: Icon,
+        body: message.data.message,
+        icon: 'https://meow.sambego.be/favicon-robot.png',
     };
 
     return self.registration.showNotification(notificationTitle, notificationOptions);
