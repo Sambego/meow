@@ -15,6 +15,7 @@
   "dependencies": {
     "classnames": "^2.2.5",
     "copy-webpack-plugin": "^4.0.1",
+    "firebase": "^3.7.2",
     "google-maps-api": "^2.0.1",
     "keycode": "^2.1.8",
     "linkref": "^1.0.1",

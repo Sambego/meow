@@ -1,5 +1,6 @@
 import webpack from 'webpack';
 import path from 'path';
+import fs from 'fs';
 import DotenvPlugin from 'webpack-dotenv-plugin';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
@@ -72,11 +73,13 @@ const createConfig = (env = 'development') => {
         ],
         devServer: {
             port: process.env.PORT || 8080,
-            host: 'localhost',
+            host: '127.0.0.1',
             publicPath: '/',
             contentBase: './src',
             historyApiFallback: true,
-            https: true,
+            https: false,
+            key: fs.readFileSync('./key.pem', 'utf8'),
+            cert: fs.readFileSync('./server.crt', 'utf8'),
         },
     };
 };
