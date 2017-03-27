@@ -5,7 +5,7 @@ import IconBigEyes from '../../../icons/favicon-robot.png';
 
 export default class LocationCodePage extends Component {
     codeExample1 = 'navigator.geolocation.getCurrentPosition(position => {\n    console.log(`Your current position: ${position.coords}`);\n});';
-    codeExample2 = 'const latLng = new maps.LatLng(coordinates.coords.latitude, coordinates.coords.longitude);\nconst geocoder = new maps.Geocoder();\n\ngeocoder.geocode({latLng}, (results, status) => {\n    if (status === maps.GeocoderStatus.OK) {\n        console.logs(`You current position is: ${results.find(result => result.types.includes(\'locality\'))[\'formatted_address\'],}`)\n    }\n});';
+    codeExample2 = 'const latLng = new maps.LatLng(coordinates.coords.latitude, coordinates.coords.longitude);\nconst geocoder = new maps.Geocoder();\n\ngeocoder.geocode({latLng}, (results, status) => {\n    if (status === maps.GeocoderStatus.OK) {\n        console.logs(`You current position is: \n        ${results.find(result => \n            result.types.includes(\'locality\'))[\'formatted_address\']}`)\n    }\n});';
 
     render() {
         return (
@@ -18,7 +18,7 @@ export default class LocationCodePage extends Component {
                 <Bubble>
                     <Code code={this.codeExample2} />
                 </Bubble>
-                <Bubble>Once we got our current position form the geolocation API, we can any map provider to do cool things with our coordinates.</Bubble>
+                <Bubble>Now that we got our current position form the geolocation API, we can use a map provider to show ourself on a map.</Bubble>
                 <div>
                     <Notification message="Hey Sam, when are you comming home, I'm hungry!" />
                     <Notification message="Oh, by the way, these holes in the couch were there when I got here 😇." icon={IconHoly}/>

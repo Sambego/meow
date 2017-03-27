@@ -5,11 +5,13 @@
 @import "../../../scss/config/colors";
 
 .bubble {
+    position: relative;
+
     align-self: flex-start;
     width: auto;
-    max-width: 100%;
+    max-width: calc(100% - 1rem);
     padding: 1.5rem;
-    margin: 0 0 1.5rem 0;
+    margin: 0 0 1.5rem 1rem;
 
     background: $white;
 
@@ -18,6 +20,20 @@
 
     font-size: 2rem;
     line-height: 150%;
+
+    &::before {
+        content: "";
+
+        position: absolute;
+        top: 1rem;
+        left: -2rem;
+
+        width: 0px;
+        height: 0px;
+
+        border: 1rem solid transparent;
+        border-right-color: $black;
+    }
 
     &--full {
         max-width: 100%;

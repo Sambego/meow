@@ -1,5 +1,6 @@
 import {h, render, Component} from 'preact';
 import {BubbleSlide, Bubble, Code} from '../../Components';
+import {Speech} from '../../Services';
 
 export default class SpeechCodePage extends Component {
     codeExample1 = 'const synth = window.speechSynthesis;';
@@ -8,11 +9,16 @@ export default class SpeechCodePage extends Component {
     codeExample4 = 'const voice = voices.find(voice => voice.name === \'Fiona\');\nutterThis.voice = voice;';
     codeExample5 = '// We start by creating a voice synthesizer\nconst synth = window.speechSynthesis;\n\n// Next we create a new speech synthesis utterance\nconst utterThis = new SpeechSynthesisUtterance(\'Hi everybody!\');\n\n// We choose an appropriate voce\nconst voice = voices.find(voice => voice.name === \'Fiona\');\n\nutterThis.voice = voice;\n\n// And last, let\'s speak!\nsynth.speak(utterThis);';
 
+    beatbox() {
+        Speech.beatbox('perrptptt, perrptpt,  perrptptctsndbootsssndctsndbotssndctsndbootssndctsndbotss');
+    };
+
     render() {
         return (
             <BubbleSlide previous="speech" next="speech-recognition">
-                <Bubble>So let's see how this speech API works.</Bubble>
-                <Bubble>We start by creating a new speech synthesizer.</Bubble>
+                <Bubble>Let's dive into some code and see how we can make this browser talk, shall we?</Bubble>
+                <Bubble>Modern browsers have started implmenting the speech API, we'll use this API to make the browser talk.</Bubble>
+                <Bubble>Let's start by creating a new speech synthesizer.</Bubble>
                 <Bubble full>
                     <Code code={this.codeExample1} />
                 </Bubble>
@@ -32,6 +38,7 @@ export default class SpeechCodePage extends Component {
                 <Bubble full>
                     <Code code={this.codeExample5} />
                 </Bubble>
+                <Bubble onShow={::this.beatbox}>Here's a something fun for y'all, I used to be a beatbox star when I was a kitten, listen!</Bubble>
             </BubbleSlide>
         );
     }

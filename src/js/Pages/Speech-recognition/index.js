@@ -38,8 +38,9 @@ export default class SpeechRecognitionPage extends Component {
                     </Bubble>}
                 </BubbleCollection>
                 <BubbleCollection>
-                    <Bubble me>{this.state.recognizedText}</Bubble>
-                    <Bubble>You would know how I’m doing if you wouldn’t be somewhere else all the time!</Bubble>
+                    <Bubble>You said: {this.state.recognizedText}.</Bubble>
+                    <Bubble>Now that I understand your language, it's time you start learning mine!</Bubble>
+                    <Bubble>Meow, means give me food!!</Bubble>
                 </BubbleCollection>
             </BubbleSlide>
         );

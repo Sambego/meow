@@ -20,6 +20,10 @@
 
         color: $grey;
         text-decoration: none;
+
+        span {
+            vertical-align: top;
+        }
     }
 
     &__icon {

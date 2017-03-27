@@ -22,8 +22,9 @@ export default class LocationPage extends Component {
                     {this.state.city && <Bubble>Gotcha! Looks like you're in <Location>{this.state.city}</Location> !</Bubble>}
                 </BubbleCollection>
                 <BubbleCollection>
-                    <Bubble>To be specific, looks like you're here:</Bubble>
+                    <Bubble>Don't be scared, but this location API is very precise!</Bubble>
                     <Bubble><Map lat={this.state.latitude} long={this.state.longitude} /></Bubble>
+                    <Bubble>Is that another cat I see there??!</Bubble>
                 </BubbleCollection>
             </BubbleSlide>
         );

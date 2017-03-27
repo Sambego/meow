@@ -7,7 +7,7 @@ const Footer = () => {
         <footer className={styles.footer}>
             <a className={styles['footer__twitter']} href="https://twitter.com/sambego">
                 <Icon name="twitter" size="small" className={styles['footer__icon']}/>
-                Sambego
+                <span>Sambego</span>
             </a>
         </footer>
     );
