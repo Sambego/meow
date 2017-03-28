@@ -13,7 +13,7 @@ export default class NotificationPushPage extends Component {
         this.pushManager.onMessage(message => {
             Notification.requestPermission(permission => {
                 if (permission === 'granted') {
-                    const notification = new Notification('Incomming push message from Poes.', {
+                    const notification = new Notification('Incoming push message from Poes.', {
                         body: message.data.message,
                         icon: Icon,
                     });
@@ -31,11 +31,11 @@ export default class NotificationPushPage extends Component {
             <BubbleSlide previous="notification" next="notification-push-code">
                 <BubbleCollection>
                     <Bubble>It is also possible to receive push notifications from a push server.</Bubble>
-                    <Button onClick={() => ::this.sendPushMessage('This message is comming from a remote push server. Does this blow your mind already?!')}>Send push notification</Button>
+                    <Button onClick={() => ::this.sendPushMessage('This message is coming from a remote push server. Does this blow your mind already?!')}>Send push notification</Button>
                 </BubbleCollection>
                 <Bubble>So what's the difference with regular notifications?</Bubble>
                 <Bubble>This message came from a remote push server, letting us know something happend. I just show the notification to warn you about this event.</Bubble>
-                <Bubble>What's even cooler is that the current window can be closed and I will still show you a notification! Go ahead, close the window and I will show you!</Bubble>
+                <Bubble>What's even cooler is that the current window can be closed and I will still show you a notification! Go ahead, close the window and you will see!</Bubble>
             </BubbleSlide>
         );
     }

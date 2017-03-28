@@ -23,7 +23,7 @@ export default class NotificationPushCodePage extends Component {
                         <Code code={this.codeExample2} />
                     </Bubble>
                 </BubbleCollection>
-                <Bubble>Once subscribed to a push server, you can use the service-worker to listen to push events. With every push event you can do a whole lot of things, but for this example we'll show a notification.</Bubble>
+                <Bubble>Once subscribed to a push server, you can use the service-worker to listen to push events. With every push event you can do a whole bunch of things, but for this example we'll show a notification.</Bubble>
                 <BubbleCollection>
                     <CodeCaption>service-worker.js</CodeCaption>
                     <Bubble full>

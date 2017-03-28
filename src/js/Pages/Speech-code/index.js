@@ -26,7 +26,7 @@ export default class SpeechCodePage extends Component {
                 <Bubble full>
                     <Code code={this.codeExample2} />
                 </Bubble>
-                <Bubble>The last thing we have to do is let the synthesizer speak our words.</Bubble>
+                <Bubble>The last thing we have to do is let the synthesizer say our words.</Bubble>
                 <Bubble full>
                     <Code code={this.codeExample3} />
                 </Bubble>
@@ -38,7 +38,7 @@ export default class SpeechCodePage extends Component {
                 <Bubble full>
                     <Code code={this.codeExample5} />
                 </Bubble>
-                <Bubble onShow={::this.beatbox}>Here's a something fun for y'all, I used to be a beatbox star when I was a kitten, listen!</Bubble>
+                <Bubble onShow={::this.beatbox}>Here's something fun for y'all, I used to be a beatbox star when I was a kitten, listen!</Bubble>
             </BubbleSlide>
         );
     }

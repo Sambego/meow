@@ -13,7 +13,7 @@ export default class NotificationPage extends Component {
                 <Bubble full>
                     <Code code={this.codeExample1} />
                 </Bubble>
-                <Bubble>Now that we have the permission to show notifications, all that's left to do is create the notification.</Bubble>
+                <Bubble>Now that we have the permission to show notifications, all that's left to do, is create the notification.</Bubble>
                 <Bubble full>
                     <Code code={this.codeExample2} />
                 </Bubble>
@@ -21,7 +21,7 @@ export default class NotificationPage extends Component {
                     <Bubble>The above code will create a notification like this</Bubble>
                     <Notification title="I'm the title of this notification!" message="The body goes here."/>
                 </BubbleCollection>
-                <Bubble>It is possible to add a click event handler to the notification to execute an action when clicking on the Notification.</Bubble>
+                <Bubble>It is possible to add a click event handler to the notification, to execute an action when clicking on the notification.</Bubble>
                 <Bubble full>
                     <Code code={this.codeExample3} />
                 </Bubble>

@@ -3,7 +3,7 @@ import {BubbleSlide, Bubble, Code} from '../../Components';
 
 export default class BatteryCodePage extends Component {
     codeExample1 = 'navigator.getBattery().then(battery => {\n    // Battery info lives here\n});';
-    codeExample2 = '.navigator.getBattery()then(battery => {\n    //battery.charging\n    //battery.level\n    //battery.chargingTime\n    //battery.dischargingTime\n});';
+    codeExample2 = 'navigator.getBattery().then(battery => {\n    //battery.charging\n    //battery.level\n    //battery.chargingTime\n    //battery.dischargingTime\n});';
     codeExample3 = 'navigator.getBattery().then(battery => {\n    battery.addEventListener(\'levelchange\', levelListener);\n    battery.addEventListener(\'chargingchange\', chargingListener);\n    battery.addEventListener(\'chargingtimechange\', chargingTimeListener);\n    battery.addEventListener(\'dischargingtimechange\', dischargingTimeListener);\n});';
 
     render() {
@@ -13,7 +13,7 @@ export default class BatteryCodePage extends Component {
                 <Bubble full>
                     <Code code={this.codeExample1} />
                 </Bubble>
-                <Bubble>Using this battery manager object we can get all kind of information.</Bubble>
+                <Bubble>Using this battery manager object we can get all kinds of information.</Bubble>
                 <Bubble full>
                     <Code code={this.codeExample2} />
                 </Bubble>
