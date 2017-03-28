@@ -39,7 +39,7 @@ export default class Location {
     }
 
     static getMap(latitude, longitude) {
-        const zoom = 10;
+        const zoom = 18;
         const size = 500;
 
         return `https://maps.googleapis.com/maps/api/staticmap?center=${latitude},${longitude}&zoom=${zoom}&size=${size}x${size}&maptype=hybrid&sensor=false&key=${this.mapsApiKey}`;
