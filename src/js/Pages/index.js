@@ -1,6 +1,7 @@
 export AboutPage from './About';
 export AcknowledgementPage from './Acknowledgement';
 export BatteryPage from './Battery';
+export BatteryCodePage from './Battery-code';
 export LocationPage from './Location';
 export LocationCodePage from './Location-code';
 export NotificationPage from './Notification';

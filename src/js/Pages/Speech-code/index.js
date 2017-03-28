@@ -10,7 +10,7 @@ export default class SpeechCodePage extends Component {
     codeExample5 = '// We start by creating a voice synthesizer\nconst synth = window.speechSynthesis;\n\n// Next we create a new speech synthesis utterance\nconst utterThis = new SpeechSynthesisUtterance(\'Hi everybody!\');\n\n// We choose an appropriate voce\nconst voice = voices.find(voice => voice.name === \'Fiona\');\n\nutterThis.voice = voice;\n\n// And last, let\'s speak!\nsynth.speak(utterThis);';
 
     beatbox() {
-        Speech.beatbox('perrptptt, perrptpt,  perrptptctsndbootsssndctsndbotssndctsndbootssndctsndbotss');
+        Speech.beatbox('ctsndbootsssndctsndbotssndctsndbootssndctsndbotss');
     };
 
     render() {

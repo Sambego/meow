@@ -42,6 +42,6 @@ export default class Location {
         const zoom = 10;
         const size = 500;
 
-        return `https://maps.googleapis.com/maps/api/staticmap?center=${latitude},${longitude}&zoom=${zoom}&size=${size}x${size}&sensor=false&key=${this.mapsApiKey}`;
+        return `https://maps.googleapis.com/maps/api/staticmap?center=${latitude},${longitude}&zoom=${zoom}&size=${size}x${size}&maptype=hybrid&sensor=false&key=${this.mapsApiKey}`;
     }
 }

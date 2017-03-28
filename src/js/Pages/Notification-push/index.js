@@ -34,7 +34,7 @@ export default class NotificationPushPage extends Component {
                     <Button onClick={() => ::this.sendPushMessage('This message is comming from a remote push server. Does this blow your mind already?!')}>Send push notification</Button>
                 </BubbleCollection>
                 <Bubble>So what's the difference with regular notifications?</Bubble>
-                <Bubble>This message is came from a remote push server, letting us know something happend. I just show the notification to warn you about this event.</Bubble>
+                <Bubble>This message came from a remote push server, letting us know something happend. I just show the notification to warn you about this event.</Bubble>
                 <Bubble>What's even cooler is that the current window can be closed and I will still show you a notification! Go ahead, close the window and I will show you!</Bubble>
             </BubbleSlide>
         );

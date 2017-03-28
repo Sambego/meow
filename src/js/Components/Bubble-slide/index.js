@@ -35,6 +35,8 @@ export default class BubbleSlide extends Component {
     componentWillMount() {
         this.KeyboardLeftListener = Keyboard.on('left', () => this.getPreviousAction());
         this.KeyboardRightListener = Keyboard.on('right', () => this.getNextAction());
+        this.KeyboardUpListener = Keyboard.on('page up', () => this.getPreviousAction());
+        this.KeyboardDownListener = Keyboard.on('page down', () => this.getNextAction());
     }
 
     componentWillUnmount() {
@@ -42,6 +44,8 @@ export default class BubbleSlide extends Component {
 
         Keyboard.off(this.KeyboardLeftListener);
         Keyboard.off(this.KeyboardRightListener);
+        Keyboard.off(this.KeyboardUpListener);
+        Keyboard.off(this.KeyboardDownListener);
     }
 
     render() {

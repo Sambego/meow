@@ -1,7 +1,7 @@
 import {h, render, Component} from 'preact';
 import {BubbleSlide, Bubble, Code, Notification} from '../../Components';
 import IconHoly from '../../../icons/favicon-holy.png';
-import IconBigEyes from '../../../icons/favicon-robot.png';
+import IconRobot from '../../../icons/favicon-robot.png';
 
 export default class LocationCodePage extends Component {
     codeExample1 = 'navigator.geolocation.getCurrentPosition(position => {\n    console.log(`Your current position: ${position.coords}`);\n});';
@@ -14,15 +14,15 @@ export default class LocationCodePage extends Component {
                 <Bubble full>
                     <Code code={this.codeExample1} />
                 </Bubble>
-                <Bubble>Once we have our coordinates, we can get the the name of the current location using the Google Maps API.</Bubble>
+                <Bubble>Now that we have our coordinates, we can get the the name of the current location using the Google Maps API.</Bubble>
                 <Bubble>
                     <Code code={this.codeExample2} />
                 </Bubble>
-                <Bubble>Now that we got our current position form the geolocation API, we can use a map provider to show ourself on a map.</Bubble>
+                <Bubble>Using the current position returned by the geolocation API, we can use a map provider like Google Maps to show where we are on a map.</Bubble>
                 <div>
                     <Notification message="Hey Sam, when are you comming home, I'm hungry!" />
                     <Notification message="Oh, by the way, these holes in the couch were there when I got here 😇." icon={IconHoly}/>
-                    <Notification message="And yeah, I found out how to send notifications in the browser." icon={IconBigEyes}/>
+                    <Notification message="Yeah, I found out how to send notifications in the browser." icon={IconRobot}/>
                 </div>
             </BubbleSlide>
         );

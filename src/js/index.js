@@ -16,6 +16,7 @@ import {
     NotificationPushPage,
     NotificationPushCodePage,
     BatteryPage,
+    BatteryCodePage,
     AcknowledgementPage,
     ThanksPage,
 } from './Pages';
@@ -36,6 +37,7 @@ render((
                 <NotificationPushPage path="/notification-push" />
                 <NotificationPushCodePage path="/notification-push-code" />
                 <BatteryPage path="/battery" />
+                <BatteryCodePage path="/battery-code" />
                 <AcknowledgementPage path="/acknowledgements" />
                 <ThanksPage path="/thanks" />
             </Router>
