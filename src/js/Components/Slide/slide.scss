@@ -5,6 +5,7 @@
 .slide {
     overflow-x: hidden;
     overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
 
     width: 100%;
     height: 100%;
