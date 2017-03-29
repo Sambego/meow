@@ -11,14 +11,16 @@ export default class NotificationPushPage extends Component {
         this.pushManager = new Push();
         this.pushManager.requestPermission();
         this.pushManager.onMessage(message => {
-            Notification.requestPermission(permission => {
-                if (permission === 'granted') {
-                    const notification = new Notification('Incoming push message from Poes.', {
-                        body: message.data.message,
-                        icon: Icon,
-                    });
-                }
-            });
+            if ('Notification' in window) {
+                Notification.requestPermission(permission => {
+                    if (permission === 'granted') {
+                        const notification = new Notification('Incoming push message from Poes.', {
+                            body: message.data.message,
+                            icon: Icon,
+                        });
+                    }
+                });
+            }
         });
     }
 
