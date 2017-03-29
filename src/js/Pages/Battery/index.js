@@ -17,7 +17,9 @@ export default class BatteryPage extends Component {
     chargeListener = () => this.refs.bubbleSlide.getNextAction();
 
     removeBatteryListener() {
-        this.state.battery.removeEventListener('chargingchange', this.chargeListener);
+        if (this.state.battery) {
+            this.state.battery.removeEventListener('chargingchange', this.chargeListener);
+        }
     }
 
     componentWillUnmount() {
@@ -46,7 +48,7 @@ export default class BatteryPage extends Component {
     renderNoSupportMessage() {
         return (
             <BubbleSlide previous="/battery" next="/battery-code" >
-                <Bubble>Unfortunately your browser does not support <strong>service workers</strong> or the <strong>push API</strong>, try using another browser to see this example, or continue the presentation.</Bubble>
+                <Bubble>Unfortunately your browser does not support the <strong>battery API</strong>, try using another browser to see this example, or continue the presentation.</Bubble>
             </BubbleSlide>
         );
     }
