@@ -5,7 +5,7 @@ import Icon from '../Icon';
 const Footer = () => {
     return (
         <footer className={styles.footer}>
-            <a className={styles['footer__twitter']} href="https://twitter.com/sambego">
+            <a className={styles['footer__twitter']} href="https://twitter.com/sambego" target="_blank">
                 <Icon name="twitter" size="small" className={styles['footer__icon']}/>
                 <span>Sambego</span>
             </a>

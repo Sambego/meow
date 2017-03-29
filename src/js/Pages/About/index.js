@@ -16,7 +16,7 @@ export default class AboutPage extends Component {
                 <BubbleCollection>
                     <Bubble>My name is Sam Bellen.</Bubble>
                     <Bubble>I'm a software engineer at madewithlove.</Bubble>
-                    <Bubble>You can find me online as <strong>Sambego</strong>.</Bubble>
+                    <Bubble>You can find me online as <a href="https://github.com/sambego" target="_blank">Sambego</a>.</Bubble>
                 </BubbleCollection>
             </BubbleSlide>
         );
