@@ -43,7 +43,7 @@ export default class BatteryPage extends Component {
 
     renderNoSupportMessage() {
         return (
-            <BubbleSlide previous="/speech" next="/speech-code" >
+            <BubbleSlide previous="/battery" next="/battery-code" >
                 <Bubble>Unfortunately your browser does not support <strong>service workers</strong> or the <strong>push API</strong>, try using another browser to see this example, or continue the presentation.</Bubble>
             </BubbleSlide>
         );

@@ -19,9 +19,9 @@ export default class LocationCodePage extends Component {
                     <Code code={this.codeExample2} />
                 </Bubble>
                 <Bubble>Using the current position returned by the geolocation API, we can use a map provider like Google Maps to show where we are on a map.</Bubble>
-                <Notification message="Hey Sam, when are you coming home, I'm hungry!" />
-                <Notification message="Oh, by the way, these holes in the couch were already there when I got here 😇." icon={IconHoly}/>
-                <Notification message="Yeah, I found out how to send notifications in the browser." icon={IconRobot}/>
+                {navigator.geolocation && <Notification message="Hey Sam, when are you coming home, I'm hungry!" />}
+                {navigator.geolocation && <Notification message="Oh, by the way, these holes in the couch were already there when I got here 😇." icon={IconHoly}/>}
+                {navigator.geolocation && <Notification message="Yeah, I found out how to send notifications in the browser." icon={IconRobot}/>}
             </BubbleSlide>
         );
     }

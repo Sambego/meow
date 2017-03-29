@@ -42,7 +42,7 @@ export default class NotificationPushPage extends Component {
 
     renderNoSupportMessage() {
         return (
-            <BubbleSlide previous="/speech" next="/speech-code" >
+            <BubbleSlide previous="/notifications-push" next="/notifications-push-code" >
                 <Bubble>Unfortunately your browser does not support <strong>service workers</strong> or the <strong>push API</strong>, try using another browser to see this example, or continue the presentation.</Bubble>
             </BubbleSlide>
         );

@@ -32,14 +32,14 @@ export default class LocationPage extends Component {
 
     renderNoSupportMessage() {
         return (
-            <BubbleSlide previous="/speech" next="/speech-code" >
+            <BubbleSlide previous="/location" next="/location-code" >
                 <Bubble>Unfortunately your browser does not support the <strong>speech API</strong>, try using another browser to see this example, or continue the presentation.</Bubble>
             </BubbleSlide>
         );
     }
 
     render() {
-        if (!navigator.geolocation) {
+        if (!('geolocation' in navigator)) {
             return this.renderNoSupportMessage();
         }
 
