@@ -8,7 +8,7 @@ export default class AcknowledgementPage extends Component {
                 <BubbleCollection>
                     <Bubble>That's it, I hope you enjoyed this presentation and learned some new things you can do with a browser!</Bubble>
                     <Bubble>You can find this presentation at <a href="https://meow.sambego.be">https://meow.sambego.be</a>.</Bubble>
-                    <Bubble>The cat image is based on <a href="https://dribbble.com/shots/1515855-AI-Cat">https://dribbble.com/shots/1515855-AI-Cat</a></Bubble>
+                    <Bubble>The cat illustrations are based on <a target="_blank" href="https://www.dropbox.com/s/4osnvipl13h35dy/poes.jpg?dl=0">this</a> and <a target="_blank" href="https://dribbble.com/shots/1515855-AI-Cat">this</a> cat</Bubble>
                 </BubbleCollection>
             </BubbleSlide>
         );
