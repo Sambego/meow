@@ -6,10 +6,12 @@ export default class BatteryPage extends Component {
     constructor(...props) {
         super(...props);
 
-        ::navigator.getBattery().then(battery => {
-            this.setState({battery});
-            this.state.battery.addEventListener('chargingchange', this.chargeListener);
-        });
+        if ('getBattery' in navigator) {
+            ::navigator.getBattery().then(battery => {
+                this.setState({battery});
+                this.state.battery.addEventListener('chargingchange', this.chargeListener);
+            });
+        }
     }
 
     chargeListener = () => this.refs.bubbleSlide.getNextAction();

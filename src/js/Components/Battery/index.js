@@ -11,16 +11,18 @@ export default class Battery extends Component {
             level: 1,
         };
 
-        ::navigator.getBattery().then(battery => {
-            this.setState({
-                battery,
-                charging: battery.charging,
-                level: battery.level,
-            });
+        if ('getBattery' in navigator) {
+            ::navigator.getBattery().then(battery => {
+                this.setState({
+                    battery,
+                    charging: battery.charging,
+                    level: battery.level,
+                });
 
-            this.state.battery.addEventListener('levelchange', this.levelListener);
-            this.state.battery.addEventListener('chargingchange', this.chargingListener);
-        });
+                this.state.battery.addEventListener('levelchange', this.levelListener);
+                this.state.battery.addEventListener('chargingchange', this.chargingListener);
+            });
+        }
     }
 
     levelListener = () => this.setBatteryLevel();
