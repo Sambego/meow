@@ -39,6 +39,30 @@
         <meta name="theme-color" content="#66B7F9">
     </head>
     <body>
+        <noscript>
+            <style>
+                body {
+                    background: #E7EEF4;
+                }
+                .no-script {
+                    width: 30rem;
+                    margin: 5rem auto 0 auto;
+                }
+                .no-script__image {
+                    display: block;
+                    margin: 0 auto;
+                }
+                .no-script__text {
+                    font-family: Helvetica, Arial, sans-serif;
+                    text-align: center;
+                }
+            </style>
+
+            <div class="no-script">
+                <img src="./favicon-robot.png" alt="Robot" class="no-script__image"/>
+                <h2 class="no-script__text">This presentation demonstrates some browser API's which need JavaScript. Please enable it and reload the page!</h2>
+            </div>
+        </noscript>
         <script>
             if ('serviceWorker' in navigator) {
                 navigator.serviceWorker.register('./offline-caching-sw.js');
