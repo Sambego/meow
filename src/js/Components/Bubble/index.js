@@ -7,11 +7,13 @@ export default class Bubble extends Component {
     static propTypes = {
         children: element.isRequired,
         full: boolean,
+        hidden: boolean,
         me: boolean,
         onShow: func.isRequired,
     };
 
     static defaultProps = {
+        hidden: false,
         me: false,
     };
 
@@ -25,6 +27,7 @@ export default class Bubble extends Component {
         const classes = classnames(styles.bubble, {
             [styles['bubble--me']]: this.props.me,
             [styles['bubble--full']]: this.props.full,
+            [styles['bubble--hidden']]: this.props.hidden,
         });
 
         return (

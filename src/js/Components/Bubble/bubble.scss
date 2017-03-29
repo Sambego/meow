@@ -43,4 +43,8 @@
         align-self: flex-end;
         background: $green;
     }
+
+    &--hidden {
+        display: none;
+    }
 }

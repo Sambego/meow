@@ -2,16 +2,16 @@ export default class Speech {
     static synth = window.speechSynthesis;
     static speechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
 
-    static speak(input) {
+    static speak(input, female = true) {
         const utterThis = new SpeechSynthesisUtterance(input);
         const voices = this.synth.getVoices();
         const doSpeak = () => {
-            const voice = voices.find(voice => voice.name === 'Fiona');
+            const voice = voices.find(voice => voice.name === (female ? 'Fiona' : 'Alex'));
 
             // Set voice params
             utterThis.voice = voice;
-            utterThis.pitch = 2;
-            utterThis.rate = .8;
+            utterThis.pitch = (female ? 2 : 1);
+            utterThis.rate = 1;
 
             // Speak§
             this.synth.speak(utterThis);
@@ -23,20 +23,6 @@ export default class Speech {
             // http://stackoverflow.com/questions/21513706/getting-the-list-of-voices-in-speechsynthesis-of-chrome-web-speech-api
             window.speechSynthesis.onvoiceschanged = doSpeak;
         }
-    }
-
-    static beatbox(input) {
-        const utterThis = new SpeechSynthesisUtterance(input);
-        const voices = this.synth.getVoices();
-        const voice = voices.find(voice => voice.name === 'Fiona');
-
-        // Set voice params
-        utterThis.voice = voice;
-        utterThis.pitch = 2;
-        utterThis.rate = .8;
-
-        // Speak§
-        this.synth.speak(utterThis);
     }
 
     static recognize() {

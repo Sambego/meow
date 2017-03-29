@@ -6,11 +6,19 @@ export default class SpeechCodePage extends Component {
     codeExample1 = 'const synth = window.speechSynthesis;';
     codeExample2 = 'const utterThis = new SpeechSynthesisUtterance(\'Hi everybody!\');';
     codeExample3 = 'synth.speak(utterThis);';
-    codeExample4 = 'const voice = voices.find(voice => voice.name === \'Fiona\');\nutterThis.voice = voice;';
+    codeExample4 = '// Find the voice you want\nconst voice = voices.find(voice => voice.name === \'Fiona\');\n\n// Use the selected voice\nutterThis.voice = voice;\n\n// Change the pitch and pace\nutterThis.pitch = 1.5;\nutterThis.rate = 0.8;';
     codeExample5 = '// We start by creating a voice synthesizer\nconst synth = window.speechSynthesis;\n\n// Next we create a new speech synthesis utterance\nconst utterThis = new SpeechSynthesisUtterance(\'Hi everybody!\');\n\n// We choose an appropriate voce\nconst voice = voices.find(voice => voice.name === \'Fiona\');\n\nutterThis.voice = voice;\n\n// And last, let\'s speak!\nsynth.speak(utterThis);';
 
+    talkMale() {
+        Speech.speak('Hi everybody', false);
+    }
+
+    talkFemale() {
+        Speech.speak('Now, this is better, dont you think?');
+    }
+
     beatbox() {
-        Speech.beatbox('ctsndbootsssndctsndbotssndctsndbootssndctsndbotss');
+        Speech.speak('catsandbootsandcatsandbootsandcatsandbootsandcatsandbootsandcatsandboots');
     };
 
     render() {
@@ -30,15 +38,19 @@ export default class SpeechCodePage extends Component {
                 <Bubble full>
                     <Code code={this.codeExample3} />
                 </Bubble>
+                <Bubble>Let's hear this in action.</Bubble>
+                <Bubble hidden onShow={this.talkMale}></Bubble>
                 <Bubble>Ok cool, but I'm a female cat and the default English voice is a male one. How do I change this?</Bubble>
                 <Bubble full>
                     <Code code={this.codeExample4} />
                 </Bubble>
+                <Bubble hidden onShow={this.talkFemale}></Bubble>
                 <Bubble>Let's recap shall we?</Bubble>
                 <Bubble full>
                     <Code code={this.codeExample5} />
                 </Bubble>
-                <Bubble onShow={::this.beatbox}>Here's something fun for y'all, I used to be a beatbox star when I was a kitten, listen!</Bubble>
+                <Bubble>Here's something fun for y'all, I used to be a beatbox star when I was a kitten, listen!</Bubble>
+                <Bubble hidden onShow={::this.beatbox}></Bubble>
             </BubbleSlide>
         );
     }
