@@ -8,10 +8,10 @@ export default class NotificationPushPage extends Component {
     constructor(...props) {
         super(...props);
 
-        this.pushManager = new Push();
-        this.pushManager.requestPermission();
-        this.pushManager.onMessage(message => {
-            if ('Notification' in window) {
+        if ('Notification' in window) {
+            this.pushManager = new Push();
+            this.pushManager.requestPermission();
+            this.pushManager.onMessage(message => {
                 Notification.requestPermission(permission => {
                     if (permission === 'granted') {
                         const notification = new Notification('Incoming push message from Poes.', {
@@ -20,12 +20,14 @@ export default class NotificationPushPage extends Component {
                         });
                     }
                 });
-            }
-        });
+            });
+        }
     }
 
     sendPushMessage(message) {
-        this.pushManager.sendPushMessage(message);
+        if ('Notification' in window) {
+            this.pushManager.sendPushMessage(message);
+        }
     }
 
     renderSlide() {
