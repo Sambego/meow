@@ -32,8 +32,10 @@ export default class BatteryPage extends Component {
                         <Bubble><Battery /></Bubble>
                     </BubbleCollection> : <Bubble><Loader /></Bubble>
                 }
-                <Bubble>Oh, you actually listended to me for once.</Bubble>
-                <Bubble>Don’t be stupid and plug it back in before you run out of battery power!</Bubble>
+                <BubbleCollection>
+                    <Bubble>Oh, you actually listended to me for once.</Bubble>
+                    <Bubble>Don’t be stupid and plug it back in before you run out of battery power!</Bubble>
+                </BubbleCollection>
                 <Bubble onShow={::this.removeBatteryListener}>Good boy, that's better!</Bubble>
             </BubbleSlide>
         );

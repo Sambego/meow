@@ -25,7 +25,7 @@ export default class SpeechCodePage extends Component {
         return (
             <BubbleSlide previous="/speech-example" next="/speech-recognition">
                 <Bubble>Let's dive into some code and see how we can make this browser talk, shall we?</Bubble>
-                <Bubble>Modern browsers have started implmenting the speech API, we'll use this API to make the browser talk.</Bubble>
+                <Bubble>Modern browsers have started implementing the speech API, we'll use this API to make the browser talk.</Bubble>
                 <Bubble>Let's start by creating a new speech synthesizer.</Bubble>
                 <Bubble full>
                     <Code code={this.codeExample1} />
