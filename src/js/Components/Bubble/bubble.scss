@@ -34,7 +34,7 @@
         border: 1rem solid transparent;
         border-top-color: $black;
 
-        @media (min-width: 45rem) {
+        @media (min-width: 450px) {
             top: 1rem;
             bottom: auto;
             left: -2rem;
@@ -63,7 +63,7 @@
             border: 1rem solid transparent;
             border-top-color: $black;
 
-            @media (min-width: 45rem) {
+            @media (min-width: 450px) {
                 top: 1rem;
                 bottom: auto;
                 left: auto;
