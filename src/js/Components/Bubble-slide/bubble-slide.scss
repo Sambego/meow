@@ -1,0 +1,34 @@
+/**
+ * The bubble slide component.
+ */
+
+@import "../../../scss/config/colors";
+
+.bubble-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 10;
+
+    padding: .5rem 1rem;
+
+    &__prev,
+    &__next {
+        width: 4rem;
+        height: 4rem;
+        margin: 0 1rem 0 0;
+
+        background: rgba($white, .5);
+
+        border: none;
+        border-radius: 50%;
+
+        &:hover {
+            background: $white;
+        }
+    }
+
+    @media (min-width: 40rem) {
+        display: none;
+    }
+}
