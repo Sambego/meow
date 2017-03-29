@@ -41,7 +41,18 @@
 
     &--me {
         align-self: flex-end;
+        margin: 0 1rem 1.5rem 0;
+
         background: $green;
+
+        &::before {
+            left: auto;
+            right: -2rem;
+
+
+            border: 1rem solid transparent;
+            border-left-color: $black;
+        }
     }
 
     &--hidden {
