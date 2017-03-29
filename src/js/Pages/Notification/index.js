@@ -8,7 +8,7 @@ export default class NotificationPage extends Component {
 
     render() {
         return (
-            <BubbleSlide previous="location-code" next="notification-push">
+            <BubbleSlide previous="/notifications" next="/notifications-push">
                 <Bubble>Showing a notification is pretty easy, but before we can do so, we need to ask for the persmission to show it.</Bubble>
                 <Bubble full>
                     <Code code={this.codeExample1} />

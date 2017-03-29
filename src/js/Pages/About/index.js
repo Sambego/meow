@@ -12,7 +12,7 @@ export default class AboutPage extends Component {
 
     render() {
         return (
-            <BubbleSlide previous="/" next="speech">
+            <BubbleSlide previous="/" next="/speech">
                 <BubbleCollection>
                     <Bubble>My name is Sam Bellen.</Bubble>
                     <Bubble>I'm a software engineer at madewithlove.</Bubble>

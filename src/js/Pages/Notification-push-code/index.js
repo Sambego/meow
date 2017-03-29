@@ -8,7 +8,7 @@ export default class NotificationPushCodePage extends Component {
 
     render() {
         return (
-            <BubbleSlide previous="notification-push" next="battery">
+            <BubbleSlide previous="/notifications-push-example" next="/battery">
                 <Bubble>To start listening to push events, we first need to create a service-worker, and register it.</Bubble>
                 <BubbleCollection>
                     <CodeCaption>main.js</CodeCaption>

@@ -6,15 +6,21 @@ import {Container, Footer} from './Components';
 import {
     StartPage,
     AboutPage,
+    SpeechTitlePage,
     SpeechPage,
     SpeechCodePage,
+    SpeechRecognitionTitlePage,
     SpeechRecognitionPage,
     SpeechRecognitionCodePage,
+    LocationTitlePage,
     LocationPage,
     LocationCodePage,
+    NotificationTitlePage,
     NotificationPage,
+    NotificationPushTitlePage,
     NotificationPushPage,
     NotificationPushCodePage,
+    BatteryTitlePage,
     BatteryPage,
     BatteryCodePage,
     AcknowledgementPage,
@@ -27,16 +33,22 @@ render((
             <Router>
                 <StartPage path="/" />
                 <AboutPage path="/about" />
-                <SpeechPage path="/speech" />
+                <SpeechTitlePage path="/speech" />
+                <SpeechPage path="/speech-example" />
                 <SpeechCodePage path="/speech-code" />
-                <SpeechRecognitionPage path="/speech-recognition" />
+                <SpeechRecognitionTitlePage path="/speech-recognition" />
+                <SpeechRecognitionPage path="/speech-recognition-example" />
                 <SpeechRecognitionCodePage path="/speech-recognition-code" />
-                <LocationPage path="/location" />
+                <LocationTitlePage path="/location" />
+                <LocationPage path="/location-example" />
                 <LocationCodePage path="/location-code" />
-                <NotificationPage path="/notification" />
-                <NotificationPushPage path="/notification-push" />
-                <NotificationPushCodePage path="/notification-push-code" />
-                <BatteryPage path="/battery" />
+                <NotificationTitlePage path="/notifications" />
+                <NotificationPage path="/notifications-example" />
+                <NotificationPushTitlePage path="/notifications-push" />
+                <NotificationPushPage path="/notifications-push-example" />
+                <NotificationPushCodePage path="/notifications-push-code" />
+                <BatteryTitlePage path="/battery" />
+                <BatteryPage path="/battery-example" />
                 <BatteryCodePage path="/battery-code" />
                 <AcknowledgementPage path="/acknowledgements" />
                 <ThanksPage path="/thanks" />

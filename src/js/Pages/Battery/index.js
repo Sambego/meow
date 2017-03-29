@@ -24,7 +24,7 @@ export default class BatteryPage extends Component {
 
     render() {
         return (
-            <BubbleSlide previous="notification-push-code" next="battery-code"  ref={linkRef(this, 'bubbleSlide')}>
+            <BubbleSlide previous="/battery" next="/battery-code"  ref={linkRef(this, 'bubbleSlide')}>
                 {this.state.battery ? <BubbleCollection>
                         {this.state.battery.level > 0.5 ? <Bubble>Looks like your battery is pretty well charged, maybe you should unplug you power adapter?</Bubble>
                             : <Bubble>Your battery is not fully charged, but let's try something, ok? Go and unplug your charger, human!</Bubble>

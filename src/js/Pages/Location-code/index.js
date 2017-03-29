@@ -9,7 +9,7 @@ export default class LocationCodePage extends Component {
 
     render() {
         return (
-            <BubbleSlide previous="location" next="notification">
+            <BubbleSlide previous="/location-example" next="/notifications">
                 <Bubble>To get the current location we can call the <code>geolocation.getCurrentPosition</code> method, which will resolve the user's coordinates in a callback.</Bubble>
                 <Bubble full>
                     <Code code={this.codeExample1} />

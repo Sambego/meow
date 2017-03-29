@@ -7,7 +7,7 @@ export default class SpeechRecognitionCodePage extends Component {
 
     render() {
         return (
-            <BubbleSlide previous="speech-recognition" next="location">
+            <BubbleSlide previous="/speech-recognition-example" next="/location">
                 <Bubble>Setting up speech-recognition is not that hard. It is important to know that you need internet access to use this API!</Bubble>
                 <Bubble>To begin, we need a new <code>SpeechRecognition</code> instance.</Bubble>
                 <Bubble full>

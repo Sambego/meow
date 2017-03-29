@@ -14,7 +14,7 @@ export default class LocationPage extends Component {
 
     render() {
         return (
-            <BubbleSlide previous="speech-recognition-code" next="location-code">
+            <BubbleSlide previous="/location" next="/location-code">
                 <BubbleCollection>
                     <Bubble>Hi Sam, where are you? Why aren't you here to pet me??</Bubble>
                     <Bubble>You don't have to tell me, I have a buddy at the CIA, he'll track you down! Just kidding, the browser can get your location for me!</Bubble>

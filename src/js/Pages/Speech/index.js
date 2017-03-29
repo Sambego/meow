@@ -17,7 +17,7 @@ export default class SpeechPage extends Component {
 
     render() {
         return (
-            <BubbleSlide previous="/" next="speech-code" >
+            <BubbleSlide previous="/speech" next="/speech-code" >
                 <Bubble onShow={::this.speakBubble1}>{this.bubble1}</Bubble>
                 <Bubble onShow={::this.speakBubble2}>{this.bubble2}</Bubble>
             </BubbleSlide>
