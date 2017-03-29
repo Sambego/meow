@@ -5,8 +5,13 @@
 .container {
     position: relative;
 
-    width: 100rem;
+    width: 100%;
+    max-width: 100rem;
     height: 100%;
-    padding: 1rem 1rem 8rem 35rem;
+    padding: 1rem 1rem 16rem 1rem;
     margin: 0 auto;
+
+    @media (min-width: 40rem) {
+        padding: 1rem 1rem 8rem 35rem;
+    }
 }

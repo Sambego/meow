@@ -16,9 +16,14 @@ h1 {
     padding: 15rem 0 10rem 0;
 
     color: $blue;
-    font-size: 6.9rem;
+    font-size: 4rem;
     text-align: center;
-    line-height: 150%;
+    line-height: 120%;
+
+    @media (min-width: 40rem) {
+        font-size: 6.9rem;
+        line-height: 150%;
+    }
 }
 
 /**

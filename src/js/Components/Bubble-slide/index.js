@@ -4,11 +4,11 @@ import {Slide, Bubbles} from '../../Components';
 import {Keyboard} from '../../Services';
 
 export default class BubbleSlide extends Component {
-    goToPreviousPage = () => {
+    goToPreviousPage() {
         this.refs.slide.previous();
     }
 
-    goToNextPage = () => {
+    goToNextPage() {
         this.refs.slide.next();
     }
 
@@ -32,6 +32,10 @@ export default class BubbleSlide extends Component {
         this.refs.bubbles.reset();
     }
 
+    scroll() {
+        this.refs.slide.base.scrollTop = (this.refs.slide.base.scrollHeight - this.refs.slide.base.clientHeight);
+    }
+
     componentWillMount() {
         this.KeyboardLeftListener = Keyboard.on('left', () => this.getPreviousAction());
         this.KeyboardRightListener = Keyboard.on('right', () => this.getNextAction());
@@ -51,7 +55,7 @@ export default class BubbleSlide extends Component {
     render() {
         return (
             <Slide previous={this.props.previous} next={this.props.next} ref={linkRef(this, 'slide')}>
-                <Bubbles ref={linkRef(this, 'bubbles')} >
+                <Bubbles ref={linkRef(this, 'bubbles')} onUpdate={::this.scroll}>
                     {this.props.children}
                 </Bubbles>
             </Slide>

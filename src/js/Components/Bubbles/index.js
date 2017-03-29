@@ -1,15 +1,12 @@
 import {h, render, Component} from 'preact';
-import {element} from 'proptypes';
+import {element, func} from 'proptypes';
 import styles from './bubbles.scss';
 
 export default class Bubbles extends Component {
     static propTypes = {
         children: element,
+        onUpdate: func,
     };
-
-    componentWillMount() {
-        this.reset();
-    }
 
     renderBubbles() {
         return this.props.children.map((child, index) => {
@@ -35,6 +32,14 @@ export default class Bubbles extends Component {
 
     lastBubbleIsShown() {
         return this.state.shownBubbles === this.props.children.length;
+    }
+
+    componentWillMount() {
+        this.reset();
+    }
+
+    componentDidUpdate() {
+        this.props.onUpdate();
     }
 
     reset() {
