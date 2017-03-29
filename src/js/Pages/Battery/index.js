@@ -22,7 +22,7 @@ export default class BatteryPage extends Component {
         this.removeBatteryListener();
     }
 
-    render() {
+    renderSlide() {
         return (
             <BubbleSlide previous="/battery" next="/battery-code"  ref={linkRef(this, 'bubbleSlide')}>
                 {this.state.battery ? <BubbleCollection>
@@ -39,5 +39,21 @@ export default class BatteryPage extends Component {
                 <Bubble onShow={::this.removeBatteryListener}>Good boy, that's better!</Bubble>
             </BubbleSlide>
         );
+    }
+
+    renderNoSupportMessage() {
+        return (
+            <BubbleSlide previous="/speech" next="/speech-code" >
+                <Bubble>Unfortunately your browser does not support <strong>service workers</strong> or the <strong>push API</strong>, try using another browser to see this example, or continue the presentation.</Bubble>
+            </BubbleSlide>
+        );
+    }
+
+    render() {
+        if (!('getBattery' in navigator)) {
+            return this.renderNoSupportMessage();
+        }
+
+        return this.renderSlide();
     }
 };

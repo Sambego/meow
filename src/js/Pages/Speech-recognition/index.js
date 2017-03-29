@@ -16,7 +16,7 @@ export default class SpeechRecognitionPage extends Component {
         this.setState({
             speechRegnitionInProcess: true,
         });
-    };
+    }
 
     setRecognizedSpeech(result) {
         this.setState({
@@ -25,9 +25,9 @@ export default class SpeechRecognitionPage extends Component {
         });
 
         this.refs.bubbleSlide.getNextAction();
-    };
+    }
 
-    render() {
+    renderSlide() {
         return (
             <BubbleSlide previous="/speech-recognition" next="/speech-recognition-code" ref={linkRef(this, 'bubbleSlide')}>
                 <BubbleCollection>
@@ -44,5 +44,21 @@ export default class SpeechRecognitionPage extends Component {
                 </BubbleCollection>
             </BubbleSlide>
         );
+    }
+
+    renderNoSupportMessage() {
+        return (
+            <BubbleSlide previous="/speech-recognition" next="/speech-recognition-code" >
+                <Bubble>Unfortunately your browser does not support the <strong>speech recognition API</strong>, try using another browser to see this example, or continue the presentation.</Bubble>
+            </BubbleSlide>
+        );
+    }
+
+    render() {
+        if (!('SpeechRecognition' in window) && !('webkitSpeechRecognition' in window)) {
+            return this.renderNoSupportMessage();
+        }
+
+        return this.renderSlide();
     }
 };

@@ -12,7 +12,7 @@ export default class LocationPage extends Component {
         });
     }
 
-    render() {
+    renderSlide() {
         return (
             <BubbleSlide previous="/location" next="/location-code">
                 <BubbleCollection>
@@ -28,5 +28,21 @@ export default class LocationPage extends Component {
                 </BubbleCollection>
             </BubbleSlide>
         );
+    }
+
+    renderNoSupportMessage() {
+        return (
+            <BubbleSlide previous="/speech" next="/speech-code" >
+                <Bubble>Unfortunately your browser does not support the <strong>speech API</strong>, try using another browser to see this example, or continue the presentation.</Bubble>
+            </BubbleSlide>
+        );
+    }
+
+    render() {
+        if (!navigator.geolocation) {
+            return this.renderNoSupportMessage();
+        }
+
+        return this.renderSlide();
     }
 };

@@ -26,7 +26,7 @@ export default class NotificationPushPage extends Component {
         this.pushManager.sendPushMessage(message);
     }
 
-    render() {
+    renderSlide() {
         return (
             <BubbleSlide previous="/notifications-push" next="/notifications-push-code">
                 <BubbleCollection>
@@ -38,5 +38,21 @@ export default class NotificationPushPage extends Component {
                 <Bubble>What's even cooler is that the current window can be closed and I will still show you a notification! Go ahead, close the window and you will see!</Bubble>
             </BubbleSlide>
         );
+    }
+
+    renderNoSupportMessage() {
+        return (
+            <BubbleSlide previous="/speech" next="/speech-code" >
+                <Bubble>Unfortunately your browser does not support <strong>service workers</strong> or the <strong>push API</strong>, try using another browser to see this example, or continue the presentation.</Bubble>
+            </BubbleSlide>
+        );
+    }
+
+    render() {
+        if (!('serviceWorker' in navigator) && !('PushManager' in window)) {
+            return this.renderNoSupportMessage();
+        }
+
+        return this.renderSlide();
     }
 };

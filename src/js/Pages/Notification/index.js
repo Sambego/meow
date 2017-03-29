@@ -9,6 +9,7 @@ export default class NotificationPage extends Component {
     render() {
         return (
             <BubbleSlide previous="/notifications" next="/notifications-push">
+                {!window.Notification && <Bubble>Unfortunately your browser does not support the <strong>notifications API</strong>, try using another browser to see this example, or continue the presentation.</Bubble>}
                 <Bubble>Showing a notification is pretty easy, but before we can do so, we need to ask for the persmission to show it.</Bubble>
                 <Bubble full>
                     <Code code={this.codeExample1} />
@@ -17,10 +18,10 @@ export default class NotificationPage extends Component {
                 <Bubble full>
                     <Code code={this.codeExample2} />
                 </Bubble>
-                <BubbleCollection>
+                {window.Notification && <BubbleCollection>
                     <Bubble>The above code will create a notification like this</Bubble>
                     <Notification title="I'm the title of this notification!" message="The body goes here."/>
-                </BubbleCollection>
+                </BubbleCollection>}
                 <Bubble>It is possible to add a click event handler to the notification, to execute an action when clicking on the notification.</Bubble>
                 <Bubble full>
                     <Code code={this.codeExample3} />

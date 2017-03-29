@@ -16,13 +16,15 @@ export default class NotificationElement extends Component  {
     };
 
     componentWillMount() {
-        Notification.requestPermission(permission => {
-            if (permission === 'granted') {
-                const notification = new Notification(this.props.title, {
-                    body: this.props.message,
-                    icon: this.props.icon,
-                });
-            }
-        });
+        if ('Notification' in window) {
+            Notification.requestPermission(permission => {
+                if (permission === 'granted') {
+                    const notification = new Notification(this.props.title, {
+                        body: this.props.message,
+                        icon: this.props.icon,
+                    });
+                }
+            });
+        }
     }
 };

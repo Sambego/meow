@@ -38,19 +38,29 @@ export default class SpeechCodePage extends Component {
                 <Bubble full>
                     <Code code={this.codeExample3} />
                 </Bubble>
-                <Bubble>Let's hear this in action.</Bubble>
-                <Bubble hidden onShow={this.talkMale}></Bubble>
+                {window.speechSynthesis &&
+                    <Bubble>Let's hear this in action.</Bubble>
+                }
+                {window.speechSynthesis &&
+                    <Bubble hidden onShow={this.talkMale}></Bubble>
+                }
                 <Bubble>Ok cool, but I'm a female cat and the default English voice is a male one. How do I change this?</Bubble>
                 <Bubble full>
                     <Code code={this.codeExample4} />
                 </Bubble>
-                <Bubble hidden onShow={this.talkFemale}></Bubble>
+                {window.speechSynthesis &&
+                    <Bubble hidden onShow={this.talkFemale}></Bubble>
+                }
                 <Bubble>Let's recap shall we?</Bubble>
                 <Bubble full>
                     <Code code={this.codeExample5} />
                 </Bubble>
-                <Bubble>Here's something fun for y'all, I used to be a beatbox star when I was a kitten, listen!</Bubble>
-                <Bubble hidden onShow={::this.beatbox}></Bubble>
+                {window.speechSynthesis &&
+                    <Bubble>Here's something fun for y'all, I used to be a beatbox star when I was a kitten, listen!</Bubble>
+                }
+                {window.speechSynthesis &&
+                    <Bubble hidden onShow={::this.beatbox}></Bubble>
+                }
             </BubbleSlide>
         );
     }
