@@ -71,6 +71,8 @@ const createConfig = (env = 'development') => {
                 from: './src/browserconfig.xml',
             }, {
                 from: './src/js/firebase-messaging-sw.js',
+            }, {
+                from: './src/js/offline-caching-sw.js',
             }]),
         ],
         devServer: {
