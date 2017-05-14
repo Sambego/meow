@@ -23,6 +23,9 @@ import {
     BatteryTitlePage,
     BatteryPage,
     BatteryCodePage,
+    MediaRecorderTitlePage,
+    MediaRecorderPage,
+    MediaRecorderCodePage,
     AcknowledgementPage,
     ThanksPage,
 } from './Pages';
@@ -50,6 +53,9 @@ render((
                 <BatteryTitlePage path="/battery" />
                 <BatteryPage path="/battery-example" />
                 <BatteryCodePage path="/battery-code" />
+                <MediaRecorderTitlePage path="/media-recorder" />
+                <MediaRecorderPage path="/media-recorder-example" />
+                <MediaRecorderCodePage path="/media-recorder-code" />
                 <AcknowledgementPage path="/acknowledgements" />
                 <ThanksPage path="/thanks" />
             </Router>

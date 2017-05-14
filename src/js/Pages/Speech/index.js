@@ -1,10 +1,11 @@
 import {h, render, Component} from 'preact';
 import {BubbleSlide, Bubble} from '../../Components';
 import {Speech} from '../../Services';
+import Config from '../../Config';
 
 export default class SpeechPage extends Component {
     conf = 'PHP Antwerp';
-    bubble1 = `Hi ${this.conf}, did you know the browser could talk? Cool huh!`;
+    bubble1 = `Hi ${Config.event}, did you know the browser could talk? Cool huh!`;
     bubble2 = 'The web speech API converts text to spoken words. You can even choose my voice, since I\'m a female cat, I\'ll be talking with a female voice. Meow!';
 
     speakBubble1() {

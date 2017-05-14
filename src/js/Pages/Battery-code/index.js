@@ -8,7 +8,7 @@ export default class BatteryCodePage extends Component {
 
     render() {
         return (
-            <BubbleSlide previous="/battery-example" next="/acknowledgements">
+            <BubbleSlide previous="/battery-example" next="/media-recorder">
                 <Bubble>To start working with the battery API, we first need to request a battery manager object.</Bubble>
                 <Bubble full>
                     <Code code={this.codeExample1} />

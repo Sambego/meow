@@ -5,6 +5,7 @@ export BubbleCollection from './Bubble-collection';
 export BubbleSlide from './Bubble-slide';
 export Button from './Button';
 export Cat from './Cat';
+export Cam from './Cam';
 export Code from './Code';
 export CodeCaption from './Code-caption';
 export Container from './Container';
