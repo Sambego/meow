@@ -1,7 +1,9 @@
 import {h, render, Component} from 'preact';
+import linkRef from 'linkref';
 import {BubbleSlide, Bubble, Cam} from '../../Components';
 import {Speech} from '../../Services';
 import Styles from './video.scss';
+import Config from '../../Config';
 
 export default class MediaRecorderPage extends Component {
     constructor(...args) {
@@ -37,13 +39,20 @@ export default class MediaRecorderPage extends Component {
 
     stopRecording() {
         this.state.recording.stop();
+
+        this.hideCameraBubble();
     }
+
+    hideCameraBubble() {
+        this.refs.cameraBubble.base.style.display = 'none';
+    }
+
 
     renderSlide() {
         return (
             <BubbleSlide previous="/media-recorder" next="/media-recorder-code" >
-                <Bubble>So sam, I haven't seen you in a while, why don't you send me a nice video message?</Bubble>
-                <Bubble><Cam onReady={::this.setupRecording}/></Bubble>
+                <Bubble>So sam, you told me you were going to {Config.event}, why don't you send me a nice video message live on stage?</Bubble>
+                <Bubble ref={linkRef(this, 'cameraBubble')}><Cam onReady={::this.setupRecording}/></Bubble>
                 <Bubble onShow={::this.stopRecording}><video autoplay controls src={this.state.recordingUrl} className={Styles.video}></video></Bubble>
             </BubbleSlide>
         );

@@ -9,7 +9,8 @@ export default class Bubble extends Component {
         full: boolean,
         hidden: boolean,
         me: boolean,
-        onShow: func.isRequired,
+        onShow: func,
+        onHide: func,
     };
 
     static defaultProps = {
@@ -20,6 +21,12 @@ export default class Bubble extends Component {
     componentWillMount() {
         if (this.props.onShow) {
             this.props.onShow();
+        }
+    }
+
+    componentWillUnmount() {
+        if (this.props.onHide) {
+            this.props.onHide();
         }
     }
 
