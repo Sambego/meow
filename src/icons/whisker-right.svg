@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="225px" height="54px" viewBox="0 0 225 54" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 43.2 (39069) - http://www.bohemiancoding.com/sketch -->
+    <title>whisker-right</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect id="Rectangle-2" fill="#E7EFF5" x="-2526" y="-311" width="2803" height="838"></rect>
+        <g id="Poes-overlay" transform="translate(-404.000000, -309.000000)" stroke-linecap="round" stroke="#241808">
+            <g id="Whiskers" transform="translate(0.000000, 308.421660)">
+                <g id="whisker-right" transform="translate(404.000000, 1.000000)">
+                    <path d="M20.1049744,21.2936556 C20.1049744,21.2936556 86.051583,-6.91387295 207.980307,1.91787701" id="Path-6"></path>
+                    <path d="M0.152359301,52.7018992 C0.152359301,52.7018992 52.0700285,32.0917184 194.485956,50.808886" id="Path-7"></path>
+                    <path d="M49.5425501,28.3056919 C49.5425501,28.3056919 160.610543,3.62159015 224.556387,29.6189698" id="Path-8"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

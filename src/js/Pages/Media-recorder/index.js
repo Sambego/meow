@@ -51,7 +51,7 @@ export default class MediaRecorderPage extends Component {
     renderSlide() {
         return (
             <BubbleSlide previous="/media-recorder" next="/media-recorder-code" >
-                <Bubble>So sam, you told me you were going to {Config.event}, why don't you send me a nice video message live on stage?</Bubble>
+                <Bubble>So sam, you told me you were going to {Config.event}, why don't you send me a nice video message, live on stage?</Bubble>
                 <Bubble ref={linkRef(this, 'cameraBubble')}><Cam onReady={::this.setupRecording}/></Bubble>
                 <Bubble onShow={::this.stopRecording}><video autoplay controls src={this.state.recordingUrl} className={Styles.video}></video></Bubble>
             </BubbleSlide>
