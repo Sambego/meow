@@ -13,18 +13,19 @@ export default class Cam extends Component {
 
         navigator.mediaDevices.getUserMedia({
             video: true,
+            audio: true,
         }).then(stream => {
             this.refs.video.srcObject = stream;
 
             if (this.props.onReady) {
-                this.props.onReady(stream);
+                this.props.onReady(stream, this.refs.video);
             }
         });
     };
 
     render() {
         return (
-            <video autoPlay ref={linkRef(this, 'video')} className={styles.cam}></video>
+            <video autoPlay ref={linkRef(this, 'video')} className={styles.cam} muted></video>
         );
     }
 };

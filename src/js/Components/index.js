@@ -10,6 +10,7 @@ export Code from './Code';
 export CodeCaption from './Code-caption';
 export Container from './Container';
 export Footer from './Footer';
+export HeadTracking from './Head-tracking';
 export Icon from './Icon';
 export Loader from './Loader';
 export Location from './Location';

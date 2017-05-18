@@ -4,7 +4,7 @@ import {BubbleSlide, BubbleCollection, Bubble} from '../../Components';
 export default class AcknowledgementPage extends Component {
     render() {
         return (
-            <BubbleSlide previous="/battery-code" next="/thanks">
+            <BubbleSlide previous="/head-tracking" next="/thanks">
                 <BubbleCollection>
                     <Bubble>That's it, I hope you enjoyed this presentation and learned some new things you can do with a browser!</Bubble>
                     <Bubble>You can find this presentation at <a href="https://meow.sambego.be">https://meow.sambego.be</a>.</Bubble>

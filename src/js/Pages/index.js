@@ -3,6 +3,7 @@ export AcknowledgementPage from './Acknowledgement';
 export BatteryTitlePage from './Battery/Title';
 export BatteryPage from './Battery';
 export BatteryCodePage from './Battery-code';
+export HeadTrackingPage from './Head-tracking';
 export LocationTitlePage from './Location/Title';
 export LocationPage from './Location';
 export LocationCodePage from './Location-code';
