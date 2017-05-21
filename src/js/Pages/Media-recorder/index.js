@@ -23,7 +23,7 @@ export default class MediaRecorderPage extends Component {
     saveRecording(event) {
         this.setState({
             recordingUrl: URL.createObjectURL(new Blob(this.state.recordingChunks, {
-                type: 'audio/ogg; codecs=opus',
+                type: 'video/webm',
             })),
             recordingChunks: [],
         });

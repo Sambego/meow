@@ -34,7 +34,7 @@ const createConfig = (env = 'development') => {
                     use: ['css-loader'],
                 }),
             }, {
-                test: /\.(png|woff|woff2)$/,
+                test: /\.(png|jpg|woff|woff2)$/,
                 use: 'file-loader?name=[name].[ext]',
             }, {
                 test: /\.(xml|html|txt|md)$/,

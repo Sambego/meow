@@ -26,6 +26,7 @@ import {
     MediaRecorderTitlePage,
     MediaRecorderPage,
     MediaRecorderCodePage,
+    HeadTrackingBonusPage,
     HeadTrackingPage,
     AcknowledgementPage,
     ThanksPage,
@@ -57,6 +58,7 @@ render((
                 <MediaRecorderTitlePage path="/media-recorder" />
                 <MediaRecorderPage path="/media-recorder-example" />
                 <MediaRecorderCodePage path="/media-recorder-code" />
+                <HeadTrackingBonusPage path="/head-tracking-bonus" />
                 <HeadTrackingPage path="/head-tracking" />
                 <AcknowledgementPage path="/acknowledgements" />
                 <ThanksPage path="/thanks" />

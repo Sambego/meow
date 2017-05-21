@@ -48,5 +48,13 @@ pre {
     overflow: auto;
     margin: 0;
 
-    font-size: 1.6rem;
+    font-size: 2rem;
+
+    code {
+        font-size: 100%;
+    }
+}
+
+code {
+    font-size: 80%;
 }
