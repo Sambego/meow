@@ -7,7 +7,7 @@ export default class SpeechCodePage extends Component {
     codeExample2 = 'const utterThis = new SpeechSynthesisUtterance(\'Hi everybody!\');';
     codeExample3 = 'synth.speak(utterThis);';
     codeExample4 = '// Find the voice you want\nconst voices = synth.getVoices();\nconst voice = voices.find(voice => voice.name === \'Fiona\');\n\n// Use the selected voice\nutterThis.voice = voice;\n\n// Change the pitch and pace\nutterThis.pitch = 1.5;\nutterThis.rate = 0.8;';
-    codeExample5 = '// We start by creating a voice synthesizer\nconst synth = window.speechSynthesis;\n\n// Next we create a new speech synthesis utterance\nconst utterThis = new SpeechSynthesisUtterance(\'Hi everybody!\');\n\n// We choose an appropriate voce\nconst voice = voices.find(voice => voice.name === \'Fiona\');\n\nutterThis.voice = voice;\n\n// And last, let\'s speak!\nsynth.speak(utterThis);';
+    codeExample5 = '// We start by using the voice synthesizer\nconst synth = window.speechSynthesis;\n\n// Next we create a new speech synthesis utterance\nconst utterThis = new SpeechSynthesisUtterance(\'Hi everybody!\');\n\n// We choose an appropriate voce\nconst voice = voices.find(voice => voice.name === \'Fiona\');\n\nutterThis.voice = voice;\n\n// And last, let\'s speak!\nsynth.speak(utterThis);';
 
     talkMale() {
         Speech.speak('Hi everybody', false);
@@ -17,16 +17,12 @@ export default class SpeechCodePage extends Component {
         Speech.speak('Now, this is better, dont you think?');
     }
 
-    beatbox() {
-        Speech.speak('catsandbootsandcatsandbootsandcatsandbootsandcatsandbootsandcatsandboots');
-    };
-
     render() {
         return (
             <BubbleSlide previous="/speech-example" next="/speech-recognition">
                 <Bubble>Let's dive into some code and see how we can make this browser talk, shall we?</Bubble>
                 <Bubble>Modern browsers have started implementing the speech API, we'll use this API to make the browser talk.</Bubble>
-                <Bubble>Let's start by creating a new speech synthesizer.</Bubble>
+                <Bubble>Let's start by using the speech synthesizer.</Bubble>
                 <Bubble full>
                     <Code code={this.codeExample1} />
                 </Bubble>
@@ -55,12 +51,6 @@ export default class SpeechCodePage extends Component {
                 <Bubble full>
                     <Code code={this.codeExample5} />
                 </Bubble>
-                {window.speechSynthesis &&
-                    <Bubble>Here's something fun for y'all, I used to be a beatbox star when I was a kitten, listen!</Bubble>
-                }
-                {window.speechSynthesis &&
-                    <Bubble hidden onShow={::this.beatbox}></Bubble>
-                }
             </BubbleSlide>
         );
     }

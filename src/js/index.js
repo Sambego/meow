@@ -30,6 +30,7 @@ import {
     HeadTrackingPage,
     AcknowledgementPage,
     ThanksPage,
+    PoesPage,
 } from './Pages';
 
 render((
@@ -58,10 +59,11 @@ render((
                 <MediaRecorderTitlePage path="/media-recorder" />
                 <MediaRecorderPage path="/media-recorder-example" />
                 <MediaRecorderCodePage path="/media-recorder-code" />
-                <HeadTrackingBonusPage path="/head-tracking-bonus" />
+                <HeadTrackingBonusPage path="/bonus" />
                 <HeadTrackingPage path="/head-tracking" />
                 <AcknowledgementPage path="/acknowledgements" />
                 <ThanksPage path="/thanks" />
+                <PoesPage path="/poes" />
             </Router>
         </Container>
 

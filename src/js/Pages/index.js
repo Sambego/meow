@@ -16,6 +16,7 @@ export NotificationPage from './Notification';
 export NotificationPushTitlePage from './Notification-push/Title';
 export NotificationPushPage from './Notification-push';
 export NotificationPushCodePage from './Notification-push-code';
+export PoesPage from './Poes';
 export SpeechTitlePage from './Speech/Title';
 export SpeechPage from './Speech';
 export SpeechCodePage from './Speech-code';

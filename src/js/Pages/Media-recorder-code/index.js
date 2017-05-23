@@ -11,7 +11,7 @@ export default class MediaRecorderCodePage extends Component {
 
     render() {
         return (
-            <BubbleSlide previous="/media-recorder-example" next="/head-tracking-bonus">
+            <BubbleSlide previous="/media-recorder-example" next="/bonus">
                 <Bubble>First things first. We need to access the user's webcam and microphone. We'll do this by using <code>getUserMedia()</code>.</Bubble>
                 <Bubble><Code code={this.codeExample1} /></Bubble>
                 <Bubble>An easy way to preview your video stream is to pass it to a video element.</Bubble>

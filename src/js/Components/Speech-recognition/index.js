@@ -1,19 +1,26 @@
 import {h, render} from 'preact';
-import {func, isRequired} from 'proptypes';
+import {func, bool} from 'proptypes';
+import classnames from 'classnames';
 import styles from './speech-recognition.scss';
 import {Icon} from '../../Components';
 import {Speech} from '../../Services';
 
-const SpeechRecognition = ({onSpeechRecognitionStart, onSpeechRecognized}) => {
+const SpeechRecognition = ({onSpeechRecognitionStart, onSpeechRecognized, small}) => {
     const startSpeechRecognition = () => {
-        onSpeechRecognitionStart();
+        if (onSpeechRecognitionStart) {
+            onSpeechRecognitionStart();
+        }
 
         Speech.recognize()
             .then(result => onSpeechRecognized(result));
     };
 
+    const classes = classnames({
+        [styles['speech-recognition__small']]: small,
+    }, styles['speech-recognition']);
+
     return (
-        <button className={styles['speech-recognition']} onClick={startSpeechRecognition}>
+        <button className={classes} onClick={startSpeechRecognition}>
             <Icon name="micropone" color="white"/>
         </button>
     );
@@ -22,6 +29,7 @@ const SpeechRecognition = ({onSpeechRecognitionStart, onSpeechRecognized}) => {
 SpeechRecognition.propTypes = {
     onSpeechRecognitionStart: func.isRequired,
     onSpeechRecognized: func.isRequired,
+    small: bool,
 };
 
 export default SpeechRecognition;

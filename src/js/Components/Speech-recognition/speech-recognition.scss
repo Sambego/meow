@@ -31,4 +31,15 @@
         width: 4rem;
         margin: -2.3rem 0 0 -.8rem;
     }
+
+    &__small {
+        max-width: 5rem;
+        height: 5rem;
+        margin: 0;
+
+        svg {
+            width: 2rem;
+            margin: -.7rem 0 0 -.2rem;
+        }
+    }
 }

@@ -15,7 +15,8 @@ export default class Location {
                         if (status === maps.GeocoderStatus.OK) {
                             resolve({
                                 city: results.find(result => result.types.includes('locality'))['address_components'].find(component => component.types.includes('locality'))['long_name'],
-                                country: results.find(result => result.types.includes('country'))['formatted_address'],
+                                // country: results.find(result => result.types.includes('country'))['formatted_address'],
+                                country: results.find(result => result.types.includes('country')),
                                 latitude: coordinates.coords.latitude,
                                 longitude: coordinates.coords.longitude,
                             });
@@ -43,5 +44,11 @@ export default class Location {
         const size = 500;
 
         return `https://maps.googleapis.com/maps/api/staticmap?center=${latitude},${longitude}&zoom=${zoom}&size=${size}x${size}&maptype=hybrid&sensor=false&key=${this.mapsApiKey}`;
+    }
+
+    static getCoordinates() {
+        return new Promise((resolve, reject) => {
+            navigator.geolocation.getCurrentPosition(coordinates => resolve(coordinates));
+        });
     }
 }
