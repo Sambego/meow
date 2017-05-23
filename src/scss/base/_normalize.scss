@@ -16,6 +16,7 @@
  */
 html {
     font-size: 10px;
+    height: 100%;
 }
 
 /**
@@ -24,10 +25,15 @@ html {
 body {
     padding: 0;
     margin: 0;
+    height: 100%;
 
     background: $blue-light;
 
     font-size: $font-size;
     font-family: $font-family;
     color: $font-color;
+
+    > div {
+        height: 100%;
+    }
 }
