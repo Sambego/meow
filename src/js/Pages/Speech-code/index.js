@@ -4,10 +4,10 @@ import {Speech} from '../../Services';
 
 export default class SpeechCodePage extends Component {
     codeExample1 = 'const synth = window.speechSynthesis;';
-    codeExample2 = 'const utterThis = new SpeechSynthesisUtterance(\'Hi everybody!\');';
+    codeExample2 = 'const utterThis = \n    new SpeechSynthesisUtterance(\'Hi everybody!\');';
     codeExample3 = 'synth.speak(utterThis);';
-    codeExample4 = '// Find the voice you want\nconst voices = synth.getVoices();\nconst voice = voices.find(voice => voice.name === \'Fiona\');\n\n// Use the selected voice\nutterThis.voice = voice;\n\n// Change the pitch and pace\nutterThis.pitch = 1.5;\nutterThis.rate = 0.8;';
-    codeExample5 = '// We start by using the voice synthesizer\nconst synth = window.speechSynthesis;\n\n// Next we create a new speech synthesis utterance\nconst utterThis = new SpeechSynthesisUtterance(\'Hi everybody!\');\n\n// We choose an appropriate voce\nconst voice = voices.find(voice => voice.name === \'Fiona\');\n\nutterThis.voice = voice;\n\n// And last, let\'s speak!\nsynth.speak(utterThis);';
+    codeExample4 = '// Find the voice you want\nconst voices = synth.getVoices();\nconst voice = voices\n    .find(voice => voice.name === \'Fiona\');\n\n// Use the selected voice\nutterThis.voice = voice;\n\n// Change the pitch and pace\nutterThis.pitch = 1.5;\nutterThis.rate = 0.8;';
+    codeExample5 = '// We start by using the voice synthesizer\nconst synth = window.speechSynthesis;\n\n// Next we create a new speech synthesis utterance\nconst utterThis = \n    new SpeechSynthesisUtterance(\'Hi everybody!\');\n\n// We choose an appropriate voce\nconst voice = voices\n    .find(voice => voice.name === \'Fiona\');\n\nutterThis.voice = voice;\n\n// And last, let\'s speak!\nsynth.speak(utterThis);';
 
     talkMale() {
         Speech.speak('Hi everybody', false);

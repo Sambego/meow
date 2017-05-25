@@ -18,7 +18,6 @@ export default class SpeechRecognitionCodePage extends Component {
                     <Code code={this.codeExample2} />
                 </Bubble>
                 <Bubble>Now all that's left to do is wait for the SpeechRecognition API to send some results back.</Bubble>
-                <Bubble>Some Japanese people are trying to invent all kinds of devices to let us communicate. Turns out all we need is a modern browser!</Bubble>
             </BubbleSlide>
         );
     }

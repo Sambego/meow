@@ -35,7 +35,7 @@ export default class Location {
                 this.convertCoordinatesToPlace(coordinates)
                     .then(location => resolve(location))
                     .catch(error => reject(error));
-            });
+            }, error => console.error(error));
         });
     }
 
@@ -48,7 +48,9 @@ export default class Location {
 
     static getCoordinates() {
         return new Promise((resolve, reject) => {
-            navigator.geolocation.getCurrentPosition(coordinates => resolve(coordinates));
+            navigator.geolocation.getCurrentPosition(coordinates => {
+                resolve(coordinates);
+            }, error => console.error(error));
         });
     }
 }

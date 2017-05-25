@@ -23,10 +23,6 @@ export default class PoesPage extends Component {
         });
     }
 
-    startSpeech() {
-        this.setState({speechRegnitionInProcess: true});
-    }
-
     speakLocation(location) {
         Speech.speak(location);
     }
@@ -49,7 +45,7 @@ export default class PoesPage extends Component {
     }
 
     renderComponent() {
-        if (!this.state.component) {
+        if (!this.state.component || this.state.command === '') {
             return null;
         }
 
@@ -100,7 +96,7 @@ export default class PoesPage extends Component {
                 {this.state.command || this.state.speechRegnitionInProcess ? <Bubble me>{this.state.speechRegnitionInProcess ? <Loader /> : this.state.command}</Bubble> : null}
                 <footer className={Styles.footer}>
                     <input type="text" onChange={::this.processInput} className={Styles.input}/>
-                    <SpeechRecognition onSpeechRecognitionStart={::this.startSpeech} onSpeechRecognized={::this.processSpeechInput} small></SpeechRecognition>
+                    <SpeechRecognition onSpeechRecognized={::this.processSpeechInput} small></SpeechRecognition>
                 </footer>
             </div>
         );
