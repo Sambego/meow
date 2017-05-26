@@ -37,7 +37,7 @@ render((
     <div>
         <Container>
             <Router>
-                <StartPage path="/" />
+                <StartPage default path="/" />
                 <AboutPage path="/about" />
                 <SpeechTitlePage path="/speech" />
                 <SpeechPage path="/speech-example" />

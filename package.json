@@ -5,7 +5,7 @@
   "author": "Sambego <sambellen@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "build:prod": "NODE_ENV=production rm -rf dist/ && webpack -p",
+    "build:prod": "NODE_ENV=production rm -rf dist/ && webpack -p --env production",
     "build:dev": "webpack-dev-server --content-base dist --inline --hot --progress",
     "git:clean": "git fetch -p",
     "lint": "eslint src/js",
