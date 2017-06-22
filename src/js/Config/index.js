@@ -1,6 +1,6 @@
 const Config = {
-    event: 'Front-trends',
-    location: 'Warsaw',
+    event: 'Fronteers',
+    location: 'Leuven',
 };
 
 export default Config;
