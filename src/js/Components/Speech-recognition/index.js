@@ -12,7 +12,8 @@ const SpeechRecognition = ({onSpeechRecognitionStart, onSpeechRecognized, small}
         }
 
         Speech.recognize()
-            .then(result => onSpeechRecognized(result));
+            .then(result => onSpeechRecognized(result))
+            .catch(error => console.error(error));
     };
 
     const classes = classnames({
