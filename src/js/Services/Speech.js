@@ -32,8 +32,8 @@ export default class Speech {
             recognition.lang = 'en-US';
             recognition.interimResults = false;
             recognition.maxAlternatives = 1;
-            recognition.onresult = event => resolve(event.results[0][0]);
-            recognition.onerror = error => reject(error);
+            recognition.onresult = event => console.log(event.results) && resolve(event.results[0][0]);
+            recognition.onerror = error => console.log(error) && reject(error);
 
             recognition.start();
         });
