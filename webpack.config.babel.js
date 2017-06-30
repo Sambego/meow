@@ -79,6 +79,8 @@ const createConfig = (env = 'development') => {
                 from: './Poes-demo.mp4',
             }, {
                 from: './poes-location-examples.mp4',
+            }, {
+                from: './device-orientation.mp4',
             }]),
         ],
         devServer: {

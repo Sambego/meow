@@ -65,9 +65,9 @@ render((
                 <BatteryTitlePage path="/battery" />
                 <BatteryPage path="/battery-example" />
                 <BatteryCodePage path="/battery-code" />
-                <MediaRecorderTitlePage path="/media-recoder" />
-                <MediaRecorderPage path="/media-recoder-example" />
-                <MediaRecorderCodePage path="/media-recoder-code" />
+                <MediaRecorderTitlePage path="/media-recorder" />
+                <MediaRecorderPage path="/media-recorder-example" />
+                <MediaRecorderCodePage path="/media-recorder-code" />
                 <AudioTitlePage path="/audio" />
                 <AudioPage path="/audio-example" />
                 <AudioCodePage path="/audio-code" />

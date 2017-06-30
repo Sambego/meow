@@ -30,8 +30,6 @@ export default class Mouse extends Component {
     }
 
     calcBeta(beta) {
-        console.log('beta', beta);
-
         if (beta) {
             switch (true) {
                 case beta < 0 && this.state.currentY - step >= 0:
@@ -51,8 +49,6 @@ export default class Mouse extends Component {
     }
 
     calcGamma(gamma) {
-        console.log('gamma:', gamma);
-
         if (gamma) {
             switch (true) {
                 case gamma < 0 && this.state.currentX - step >= 0:
