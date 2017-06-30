@@ -73,6 +73,12 @@ const createConfig = (env = 'development') => {
                 from: './src/js/firebase-messaging-sw.js',
             }, {
                 from: './src/js/offline-caching-sw.js',
+            }, {
+                from: './location-example.mp4',
+            }, {
+                from: './src/js/Poes-demo.mp4',
+            }, {
+                from: './src/js/poes-location-examples.mp4',
             }]),
         ],
         devServer: {
