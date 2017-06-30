@@ -61,11 +61,11 @@ export default class Mouse extends Component {
                 case gamma < 0 && this.state.currentX - step < 0:
                     this.setState({currentX: 0});
                     break;
-                case gamma > 0 && this.state.currentX + step <= this.state.maxY:
+                case gamma > 0 && this.state.currentX + step <= this.state.maxX:
                     this.setState({currentX: this.state.currentX + step});
                     break;
-                case gamma > 0 && this.state.currentX + step > this.state.maxY:
-                    this.setState({currentX: this.state.maxY});
+                case gamma > 0 && this.state.currentX + step > this.state.maxX:
+                    this.setState({currentX: this.state.maxX});
                     break;
             }
         }
