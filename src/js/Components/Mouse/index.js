@@ -24,8 +24,8 @@ export default class Mouse extends Component {
 
     componentDidMount() {
         this.setState({
-            maxX: this.refs.container.offsetWidth - 223,
-            maxY: this.refs.container.offsetHeight - 221,
+            maxX: window.innerWidth - 223,
+            maxY: window.innerHeight - 221,
         });
     }
 
@@ -76,8 +76,8 @@ export default class Mouse extends Component {
 
     render() {
         return (
-            <div ref={linkRef(this, 'container')} className={styles.container}>
-                <div dangerouslySetInnerHTML={{__html: mouse}} className={styles.mouse} style={{tranform: `translate3D(${this.state.currentX}, ${this.state.currentY}, 0)`}}></div>
+            <div ref={linkRef(this, 'container')}>
+                <div dangerouslySetInnerHTML={{__html: mouse}} className={styles.mouse} style={{tranform: `translate3d(${this.state.currentX}, ${this.state.currentY}, 0)`}}></div>
             </div>
         );
     }
