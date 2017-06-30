@@ -15,8 +15,8 @@ export default class Mouse extends Component {
             gamma: 0,
             maxX: 0,
             maxY: 0,
-            currentX: 50,
-            currentY: 50,
+            currentX: 0,
+            currentY: 0,
         };
 
         window.addEventListener('deviceorientation', ::this.move);
