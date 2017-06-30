@@ -9,6 +9,10 @@
     width: 10rem;
 
     @media (min-width: 450px) {
+        width: 20rem;
+    }
+
+    @media (min-width: 700px) {
         width: 30rem;
     }
 }

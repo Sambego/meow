@@ -1,6 +1,6 @@
 const Config = {
-    event: 'Fronteers',
-    location: 'Leuven',
+    event: 'Odessa JS',
+    location: 'Odessa',
 };
 
 export default Config;

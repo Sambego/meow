@@ -10,7 +10,7 @@
     align-self: flex-start;
     width: auto;
     max-width: calc(100% - 1rem);
-    padding: 1.5rem;
+    padding: 1rem;
     margin: 0 0 1.5rem 1rem;
 
     background: $white;
@@ -18,7 +18,7 @@
     border: 2px solid $black;
     border-radius: 1rem;
 
-    font-size: 2.8rem;
+    font-size: 2rem;
     line-height: 150%;
 
     &::before {
@@ -78,5 +78,11 @@
 
     &--hidden {
         display: none;
+    }
+
+    @media (min-width: 700px) {
+        padding: 1.5rem;
+
+        font-size: 2.8rem;
     }
 }

@@ -12,6 +12,10 @@
     margin: 0 auto;
 
     @media (min-width: 450px) {
+        padding: 1rem 1rem 8rem 20rem;
+    }
+
+    @media (min-width: 700px) {
         padding: 1rem 1rem 8rem 35rem;
     }
 }

@@ -9,8 +9,12 @@
 .mwl {
     padding-left: 3.5rem;
 
-    background: transparent url("../../../img/mwl.png") 0 1.2rem no-repeat;
+    background: transparent url("../../../img/mwl.png") 0 0.8rem no-repeat;
     background-size: 3rem;
 
     color: #cb1a38;
+
+    @media (min-width: 700px) {
+        background-position: 0 1.2rem;
+    }
 }

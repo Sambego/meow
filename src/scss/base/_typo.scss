@@ -20,7 +20,7 @@ h1 {
     text-align: center;
     line-height: 120%;
 
-    @media (min-width: 450px) {
+    @media (min-width: 700px) {
         font-size: 6.9rem;
         line-height: 150%;
     }
@@ -48,10 +48,14 @@ pre {
     overflow: auto;
     margin: 0;
 
-    font-size: 2rem;
+    font-size: 1.5rem;
 
     code {
         font-size: 100%;
+    }
+
+    @media (min-width: 700px) {
+        font-size: 2rem;
     }
 }
 
