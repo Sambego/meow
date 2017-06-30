@@ -1,4 +1,7 @@
 export AboutPage from './About';
+export AudioPage from './Audio';
+export AudioTitlePage from './Audio/Title';
+export AudioCodePage from './Audio-code';
 export AcknowledgementPage from './Acknowledgement';
 export BatteryTitlePage from './Battery/Title';
 export BatteryPage from './Battery';
@@ -25,3 +28,6 @@ export SpeechRecognitionPage from './Speech-recognition';
 export SpeechRecognitionCodePage from './Speech-recognition-code';
 export StartPage from './Start';
 export ThanksPage from './Thanks';
+export VibrationTitlePage from './vibration/Title';
+export VibrationPage from './vibration';
+export VibrationCodePage from './vibration-code';

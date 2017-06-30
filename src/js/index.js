@@ -26,6 +26,12 @@ import {
     MediaRecorderTitlePage,
     MediaRecorderPage,
     MediaRecorderCodePage,
+    AudioTitlePage,
+    AudioPage,
+    AudioCodePage,
+    VibrationTitlePage,
+    VibrationPage,
+    VibrationCodePage,
     HeadTrackingBonusPage,
     HeadTrackingPage,
     AcknowledgementPage,
@@ -56,9 +62,15 @@ render((
                 <BatteryTitlePage path="/battery" />
                 <BatteryPage path="/battery-example" />
                 <BatteryCodePage path="/battery-code" />
-                <MediaRecorderTitlePage path="/media-recorder" />
-                <MediaRecorderPage path="/media-recorder-example" />
-                <MediaRecorderCodePage path="/media-recorder-code" />
+                <MediaRecorderTitlePage path="/media-recoder" />
+                <MediaRecorderPage path="/media-recoder-example" />
+                <MediaRecorderCodePage path="/media-recoder-code" />
+                <AudioTitlePage path="/audio" />
+                <AudioPage path="/audio-example" />
+                <AudioCodePage path="/audio-code" />
+                <VibrationTitlePage path="/vibration" />
+                <VibrationPage path="/vibration-example" />
+                <VibrationCodePage path="/vibration-code" />
                 <HeadTrackingBonusPage path="/bonus" />
                 <HeadTrackingPage path="/head-tracking" />
                 <AcknowledgementPage path="/acknowledgements" />
