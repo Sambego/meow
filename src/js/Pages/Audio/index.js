@@ -1,6 +1,6 @@
 import {h, render, Component} from 'preact';
 import linkRef from 'linkref';
-import FrequencyCalculator from 'Frequency-calculator';
+import FrequencyCalculator from 'frequency-calculator';
 import {BubbleSlide, BubbleCollection, Bubble, Battery, Loader} from '../../Components';
 import Config from '../../Config';
 

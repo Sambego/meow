@@ -1,6 +1,12 @@
 /**
  * The mouse component.
  */
+.container {
+    width: 100%;
+    height: 100%;
+
+    background: tomato;
+}
 
 .mouse {
     position: absolute;
