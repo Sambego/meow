@@ -16,6 +16,7 @@ export Loader from './Loader';
 export Location from './Location';
 export LocationBubble from './Location-bubble';
 export Map from './Map';
+export Mouse from './Mouse';
 export News from './News';
 export Notification from './Notification';
 export Places from './Places';

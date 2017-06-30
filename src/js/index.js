@@ -32,6 +32,9 @@ import {
     VibrationTitlePage,
     VibrationPage,
     VibrationCodePage,
+    DeviceOrientationTitlePage,
+    DeviceOrientationPage,
+    DeviceOrientationCodePage,
     HeadTrackingBonusPage,
     HeadTrackingPage,
     AcknowledgementPage,
@@ -71,6 +74,9 @@ render((
                 <VibrationTitlePage path="/vibration" />
                 <VibrationPage path="/vibration-example" />
                 <VibrationCodePage path="/vibration-code" />
+                <DeviceOrientationTitlePage path="/device-orientation" />
+                <DeviceOrientationPage path="/device-orientation-example" />
+                <DeviceOrientationCodePage path="/device-orientation-code" />
                 <HeadTrackingBonusPage path="/bonus" />
                 <HeadTrackingPage path="/head-tracking" />
                 <AcknowledgementPage path="/acknowledgements" />

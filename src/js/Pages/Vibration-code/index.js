@@ -7,7 +7,7 @@ export default class AudioCodePage extends Component {
 
     render() {
         return (
-            <BubbleSlide previous="/vibration-example" next="/bonus">
+            <BubbleSlide previous="/vibration-example" next="/device-orientation">
                 <Bubble>Vibrating a device is pretty easy. You can use the vibrate function in the navigator object. It takes a parameter which will determine the length of the vibration.</Bubble>
                 <Bubble full>
                     <Code code={this.codeExample1} />
