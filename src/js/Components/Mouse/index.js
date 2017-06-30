@@ -77,7 +77,7 @@ export default class Mouse extends Component {
     render() {
         return (
             <div ref={linkRef(this, 'container')}>
-                <div dangerouslySetInnerHTML={{__html: mouse}} className={styles.mouse} style={{tranform: `translate3d(${this.state.currentX}, ${this.state.currentY}, 0)`}}></div>
+                <div dangerouslySetInnerHTML={{__html: mouse}} className={styles.mouse} style={{tranform: `translate3d(${this.state.currentX}px, ${this.state.currentY}px, 0px)`}}></div>
             </div>
         );
     }
