@@ -34,17 +34,17 @@ export default class Mouse extends Component {
 
         if (beta) {
             switch (true) {
-                case beta < 0 && this.state.currentX - step >= 0:
-                    this.setState({currentX: this.state.currentX - step});
+                case beta < 0 && this.state.currentY - step >= 0:
+                    this.setState({currentY: this.state.currentY - step});
                     break;
-                case beta < 0 && this.state.currentX - step < 0:
-                    this.setState({currentX: 0});
+                case beta < 0 && this.state.currentY - step < 0:
+                    this.setState({currentY: 0});
                     break;
-                case beta > 0 && this.state.currentX + step <= this.state.maxX:
-                    this.setState({currentX: this.state.currentX + step});
+                case beta > 0 && this.state.currentY + step <= this.state.maxY:
+                    this.setState({currentY: this.state.currentY + step});
                     break;
-                case beta > 0 && this.state.currentX + step > this.state.maxX:
-                    this.setState({currentX: this.state.maxX});
+                case beta > 0 && this.state.currentY + step > this.state.maxY:
+                    this.setState({currentY: this.state.maxY});
                     break;
             }
         }
@@ -55,17 +55,17 @@ export default class Mouse extends Component {
 
         if (gamma) {
             switch (true) {
-                case gamma < 0 && this.state.currentY - step >= 0:
-                    this.setState({currentY: this.state.currentY - step});
+                case gamma < 0 && this.state.currentX - step >= 0:
+                    this.setState({currentX: this.state.currentX - step});
                     break;
-                case gamma < 0 && this.state.currentY - step < 0:
-                    this.setState({currentY: 0});
+                case gamma < 0 && this.state.currentX - step < 0:
+                    this.setState({currentX: 0});
                     break;
-                case gamma > 0 && this.state.currentY + step <= this.state.maxY:
-                    this.setState({currentY: this.state.currentY + step});
+                case gamma > 0 && this.state.currentX + step <= this.state.maxY:
+                    this.setState({currentX: this.state.currentX + step});
                     break;
-                case gamma > 0 && this.state.currentY + step > this.state.maxY:
-                    this.setState({currentY: this.state.maxY});
+                case gamma > 0 && this.state.currentX + step > this.state.maxY:
+                    this.setState({currentX: this.state.maxY});
                     break;
             }
         }
