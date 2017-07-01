@@ -18,10 +18,26 @@ export default class Bubble extends Component {
         me: false,
     };
 
+    constructor(...args) {
+        super(...args);
+
+        this.state = {
+            in: false,
+        };
+    }
+
     componentWillMount() {
         if (this.props.onShow) {
             this.props.onShow();
         }
+    }
+
+    componentDidMount() {
+        requestAnimationFrame(() => {
+            this.setState({
+                in: true,
+            });
+        });
     }
 
     componentWillUnmount() {
@@ -31,10 +47,11 @@ export default class Bubble extends Component {
     }
 
     render() {
-        const classes = classnames(styles.bubble, {
+        const classes = classnames(styles.bubble, styles['bubble-animation'], {
             [styles['bubble--me']]: this.props.me,
             [styles['bubble--full']]: this.props.full,
             [styles['bubble--hidden']]: this.props.hidden,
+            [styles['bubble-animation--active']]: this.state.in,
         });
 
         return (
