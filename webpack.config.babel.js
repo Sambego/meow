@@ -74,13 +74,8 @@ const createConfig = (env = 'development') => {
             }, {
                 from: './src/js/offline-caching-sw.js',
             }, {
-                from: './location-example.mp4',
-            }, {
-                from: './Poes-demo.mp4',
-            }, {
-                from: './poes-location-examples.mp4',
-            }, {
-                from: './device-orientation.mp4',
+                context: './videos/',
+                from: '**/*',
             }]),
         ],
         devServer: {
