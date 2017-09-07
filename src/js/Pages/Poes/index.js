@@ -1,6 +1,17 @@
-import {h, render, Component} from 'preact';
-import {AI, Location, Speech} from '../../Services';
-import {Battery, Bubble, LocationBubble, Weather, Reminder, HeadTracking, SpeechRecognition, News, Places, Loader} from '../../Components';
+import { h, render, Component } from 'preact';
+import { AI, Location, Speech } from '../../Services';
+import {
+    Battery,
+    Bubble,
+    LocationBubble,
+    Weather,
+    Reminder,
+    HeadTracking,
+    SpeechRecognition,
+    News,
+    Places,
+    Loader,
+} from '../../Components';
 import Styles from './poes.scss';
 
 export default class PoesPage extends Component {
@@ -52,11 +63,15 @@ export default class PoesPage extends Component {
         if (this.state.component.type === 'hello') {
             Speech.speak('I\'m great, thanks!');
 
-            return <Bubble>I'm great, thanks!</Bubble>;
+            return <Bubble noContainer>I'm great, thanks!</Bubble>;
         } else if (this.state.component.type === 'battery') {
             Speech.speak('Here is your battery information!');
 
-            return <Bubble><Battery /></Bubble>;
+            return (
+                <Bubble noContainer>
+                    <Battery />
+                </Bubble>
+            );
         } else if (this.state.component.type === 'location') {
             return <LocationBubble onLocation={::this.speakLocation} />;
         } else if (this.state.component.type === 'weather') {
@@ -68,7 +83,11 @@ export default class PoesPage extends Component {
         } else if (this.state.component.type === 'bonus') {
             Speech.speak('Hey look, now you\'re a cat as well!');
 
-            return <Bubble><HeadTracking /></Bubble>;
+            return (
+                <Bubble noContainer>
+                    <HeadTracking />
+                </Bubble>
+            );
         } else if (this.state.component.type === 'news') {
             Speech.speak('Here is some fresh news for you!');
 
@@ -76,14 +95,21 @@ export default class PoesPage extends Component {
         } else if (this.state.component.type === 'help') {
             Speech.speak('These are the tricks I got up my sleeve!');
 
-            return <Bubble>{this.renderHelp()}</Bubble>;
+            return (
+                <Bubble noContainer>
+                    {this.renderHelp()}
+                </Bubble>
+            );
         }
 
-        Speech.speak('I didn\'t understand that, maybe try one of the following commands');
+        Speech.speak(
+            'I didn\'t understand that, maybe try one of the following commands'
+        );
 
         return (
-            <Bubble>
-                I didn't understand that, maybe try one of the following commands:
+            <Bubble noContainer>
+                I didn't understand that, maybe try one of the following
+                commands:
                 {this.renderHelp()}
             </Bubble>
         );
@@ -93,12 +119,25 @@ export default class PoesPage extends Component {
         return (
             <div className={Styles.poes}>
                 {::this.renderComponent()}
-                {this.state.command || this.state.speechRegnitionInProcess ? <Bubble me>{this.state.speechRegnitionInProcess ? <Loader /> : this.state.command}</Bubble> : null}
+                {this.state.command || this.state.speechRegnitionInProcess
+                    ? <Bubble noContainer me>
+                          {this.state.speechRegnitionInProcess
+                              ? <Loader />
+                              : this.state.command}
+                      </Bubble>
+                    : null}
                 <footer className={Styles.footer}>
-                    <input type="text" onChange={::this.processInput} className={Styles.input}/>
-                    <SpeechRecognition onSpeechRecognized={::this.processSpeechInput} small></SpeechRecognition>
+                    <input
+                        type="text"
+                        onChange={::this.processInput}
+                        className={Styles.input}
+                    />
+                    <SpeechRecognition
+                        onSpeechRecognized={::this.processSpeechInput}
+                        small
+                    />
                 </footer>
             </div>
         );
     }
-};
+}

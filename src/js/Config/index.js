@@ -1,7 +1,7 @@
 const Config = {
-    event: 'Odessa JS',
-    location: 'Odessa',
-    composer: 'Mykola Lysenko',
+    event: 'Refresh rocks',
+    location: 'Tallinn',
+    composer: 'Arvo Pärt',
 };
 
 export default Config;

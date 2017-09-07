@@ -8,4 +8,8 @@
     justify-content: flex-end;
     height: auto;
     min-height: 100%;
+
+    > div {
+        display: block !important;
+    }
 }

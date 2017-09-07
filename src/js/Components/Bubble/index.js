@@ -1,5 +1,5 @@
-import {h, render, Component} from 'preact';
-import {element, boolean, func, isRequired} from 'proptypes';
+import { h, render, Component } from 'preact';
+import { element, boolean, func, isRequired } from 'proptypes';
 import classnames from 'classnames';
 import styles from './bubble.scss';
 
@@ -9,6 +9,7 @@ export default class Bubble extends Component {
         full: boolean,
         hidden: boolean,
         me: boolean,
+        noContainer: boolean,
         onShow: func,
         onHide: func,
     };
@@ -55,9 +56,17 @@ export default class Bubble extends Component {
         });
 
         return (
-            <div className={classes}>
-                {this.props.children}
+            <div>
+                {this.props.noContainer
+                    ? <div className={classes}>
+                          {this.props.children}
+                      </div>
+                    : <div className={styles['bubble-container']}>
+                          <div className={classes}>
+                              {this.props.children}
+                          </div>
+                      </div>}
             </div>
         );
     }
-};
+}

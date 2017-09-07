@@ -1,12 +1,20 @@
-import {h, render} from 'preact';
-import {element} from 'proptypes';
-import styles from  './bubble-collection.scss';
+import { h, render, cloneElement } from 'preact';
+import { element } from 'proptypes';
+import styles from './bubble-collection.scss';
 
-const BubbleCollection = ({children}) => {
+const BubbleCollection = ({ children }) => {
+    const renderChildren = () => {
+        return children.map(child =>
+            cloneElement(child, {
+                noContainer: true,
+            })
+        );
+    };
+
     return (
         <div className={styles['bubble-collection']}>
             <div className={styles['bubble-collection__inner']}>
-                {children}
+                {renderChildren()}
             </div>
         </div>
     );

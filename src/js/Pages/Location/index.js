@@ -1,7 +1,14 @@
-import {h, render, Component} from 'preact';
-import {BubbleSlide, Bubble, BubbleCollection, Loader, Location, Map} from '../../Components';
-import styles from  './location.scss';
-import {Location as LocationService} from '../../Services';
+import { h, render, Component } from 'preact';
+import {
+    BubbleSlide,
+    Bubble,
+    BubbleCollection,
+    Loader,
+    Location,
+    Map,
+} from '../../Components';
+import styles from './location.scss';
+import { Location as LocationService } from '../../Services';
 
 export default class LocationPage extends Component {
     constructor(...props) {
@@ -16,14 +23,34 @@ export default class LocationPage extends Component {
         return (
             <BubbleSlide previous="/location" next="/location-code">
                 <BubbleCollection>
-                    <Bubble>Hey Sam, where are you? Why aren't you here to pet me??</Bubble>
-                    <Bubble>You don't have to tell me, I have a buddy at the CIA, he'll track you down! Just kidding, the browser can get your location for me!</Bubble>
-                    {!this.state.city && <Bubble><Loader /></Bubble>}
-                    {this.state.city && <Bubble>Gotcha! Looks like you're in <Location>{this.state.city}</Location> !</Bubble>}
+                    <Bubble>
+                        Hey Sam, where are you? Why aren't you here to pet me??
+                    </Bubble>
+                    <Bubble>
+                        You don't have to tell me, I have a buddy at the CIA,
+                        he'll track you down! Just kidding, the browser can get
+                        your location for me!
+                    </Bubble>
+                    {!this.state.city &&
+                        <Bubble>
+                            <Loader />
+                        </Bubble>}
+                    {this.state.city &&
+                        <Bubble>
+                            Gotcha! Looks like you're in{' '}
+                            <Location>{this.state.city}</Location> !
+                        </Bubble>}
                 </BubbleCollection>
                 <BubbleCollection>
-                    <Bubble>Don't be scared, but this location API is very precise!</Bubble>
-                    <Bubble><Map lat={this.state.latitude} long={this.state.longitude} /></Bubble>
+                    <Bubble>
+                        Don't be scared, but this location API is very precise!
+                    </Bubble>
+                    <Bubble>
+                        <Map
+                            lat={this.state.latitude}
+                            long={this.state.longitude}
+                        />
+                    </Bubble>
                     <Bubble>Is that another cat I see there??!</Bubble>
                 </BubbleCollection>
             </BubbleSlide>
@@ -32,8 +59,12 @@ export default class LocationPage extends Component {
 
     renderNoSupportMessage() {
         return (
-            <BubbleSlide previous="/location" next="/location-code" >
-                <Bubble>Unfortunately your browser does not support the <strong>speech API</strong>, try using another browser to see this example, or continue the presentation.</Bubble>
+            <BubbleSlide previous="/location" next="/location-code">
+                <Bubble>
+                    Unfortunately your browser does not support the{' '}
+                    <strong>speech API</strong>, try using another browser to
+                    see this example, or continue the presentation.
+                </Bubble>
             </BubbleSlide>
         );
     }
@@ -45,4 +76,4 @@ export default class LocationPage extends Component {
 
         return this.renderSlide();
     }
-};
+}

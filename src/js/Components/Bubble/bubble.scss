@@ -4,10 +4,16 @@
 
 @import "../../../scss/config/colors";
 
+.bubble-container {
+    height: calc(100vh - 10rem);
+    display: flex !important;
+    align-items: flex-end;
+    justify-content: flex-start;
+}
+
 .bubble {
     position: relative;
 
-    align-self: flex-start;
     width: auto;
     max-width: calc(100% - 1rem);
     padding: 1rem;
@@ -59,7 +65,6 @@
             bottom: -2rem;
             right: 1rem;
 
-
             border: 1rem solid transparent;
             border-top-color: $black;
 
@@ -68,7 +73,6 @@
                 bottom: auto;
                 left: auto;
                 right: -2rem;
-
 
                 border: 1rem solid transparent;
                 border-left-color: $black;
@@ -88,11 +92,11 @@
 }
 
 .bubble-animation {
-    transition: transform .4s ease-in-out, line-height .4s ease-in-out;
-
-    transform: translate3d(0, 100%, 0);
-
-    &--active {
-        transform: translate3d(0, 0, 0);
-    }
+    // transition: transform .4s ease-in-out, line-height .4s ease-in-out;
+    //
+    // transform: translate3d(0, 500%, 0);
+    //
+    // &--active {
+    //     transform: translate3d(0, 0, 0);
+    // }
 }

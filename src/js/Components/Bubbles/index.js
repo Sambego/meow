@@ -1,5 +1,5 @@
-import {h, render, Component} from 'preact';
-import {element, func} from 'proptypes';
+import { h, render, Component } from 'preact';
+import { element, func } from 'proptypes';
 import styles from './bubbles.scss';
 
 export default class Bubbles extends Component {
@@ -10,20 +10,20 @@ export default class Bubbles extends Component {
 
     renderBubbles() {
         return this.props.children.map((child, index) => {
-            if (index <= (this.state.shownBubbles - 1)) {
+            if (index <= this.state.shownBubbles - 1) {
                 return child;
             }
 
             return null;
         });
-    };
+    }
 
     previousBubble() {
-        this.setState({shownBubbles: (this.state.shownBubbles - 1)});
+        this.setState({ shownBubbles: this.state.shownBubbles - 1 });
     }
 
     nextBubble() {
-        this.setState({shownBubbles: (this.state.shownBubbles + 1)});
+        this.setState({ shownBubbles: this.state.shownBubbles + 1 });
     }
 
     firstBubbleIsShown() {
@@ -55,4 +55,4 @@ export default class Bubbles extends Component {
             </div>
         );
     }
-};
+}
