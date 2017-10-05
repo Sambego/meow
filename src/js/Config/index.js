@@ -1,7 +1,7 @@
 const Config = {
-    event: 'Refresh rocks',
-    location: 'Tallinn',
-    composer: 'Arvo Pärt',
+    event: 'Creativity Gym',
+    location: 'Mechelen',
+    composer: 'Jacques Brel',
 };
 
 export default Config;
