@@ -22,7 +22,8 @@ export default class MediaSessionPage extends Component {
         return (
             <BubbleSlide previous="/media-session" next="/media-session-code">
                 <Bubble>
-                    Hey Sam, have you ever tried controlling some media on a
+                    Hey Sam, did you know you can add some metadata to the media
+                    you're playing on your page. It will show up on android.
                     webpage?
                 </Bubble>
                 <Bubble>

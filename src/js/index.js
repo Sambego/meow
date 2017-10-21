@@ -38,6 +38,9 @@ import {
     MediaSessionTitlePage,
     MediaSessionPage,
     MediaSessionCodePage,
+    OfflineTitlePage,
+    FutureTitlePage,
+    FuturePage,
     HeadTrackingBonusPage,
     HeadTrackingPage,
     AcknowledgementPage,
@@ -83,6 +86,9 @@ render(
                 <MediaSessionTitlePage path="/media-session" />
                 <MediaSessionPage path="/media-session-example" />
                 <MediaSessionCodePage path="/media-session-code" />
+                <OfflineTitlePage path="/offline" />
+                <FutureTitlePage path="/future" />
+                <FuturePage path="/future-example" />
                 <HeadTrackingBonusPage path="/bonus" />
                 <HeadTrackingPage path="/head-tracking" />
                 <AcknowledgementPage path="/acknowledgements" />

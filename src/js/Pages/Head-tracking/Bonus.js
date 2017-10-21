@@ -4,10 +4,7 @@ import { BubbleSlide, Bubble, HeadTracking } from '../../Components';
 export default class HeadTrackingBonusPage extends Component {
     render() {
         return (
-            <BubbleSlide
-                previous="/media-session-code"
-                next="/acknowledgements"
-            >
+            <BubbleSlide previous="/future-example" next="/acknowledgements">
                 <h1>Let's throw everything together! 🎉</h1>
             </BubbleSlide>
         );
