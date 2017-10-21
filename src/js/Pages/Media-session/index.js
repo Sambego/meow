@@ -5,9 +5,7 @@ import Poes from '../../../icons/favicon.png';
 import Sound from '../../../sound/bensound-memories.mp3';
 
 export default class MediaSessionPage extends Component {
-    constructor(args) {
-        super(args);
-
+    setSessionInfo() {
         if (navigator.mediaSession) {
             navigator.mediaSession.metadata = new MediaMetadata({
                 title: 'Close your eyes and meow to fluff',
@@ -15,6 +13,25 @@ export default class MediaSessionPage extends Component {
                 album: 'Meow the jewels',
                 artwork: [{ src: 'Poes', sizes: '96x96', type: 'image/png' }],
             });
+
+            navigator.mediaSession.setActionHandler('play', () =>
+                console.log('play')
+            );
+            navigator.mediaSession.setActionHandler('pause', () =>
+                console.log('pause')
+            );
+            navigator.mediaSession.setActionHandler('seekbackward', () =>
+                console.log('seek backward')
+            );
+            navigator.mediaSession.setActionHandler('seekforward', () =>
+                console.log('seek forward')
+            );
+            navigator.mediaSession.setActionHandler('previoustrack', () =>
+                console.log('previous track')
+            );
+            navigator.mediaSession.setActionHandler('nexttrack', () =>
+                console.log('next track')
+            );
         }
     }
 
@@ -22,11 +39,20 @@ export default class MediaSessionPage extends Component {
         return (
             <BubbleSlide previous="/media-session" next="/media-session-code">
                 <Bubble>
-                    Hey Sam, did you know you can add some metadata to the media
-                    you're playing on your page. It will show up on android.
-                    webpage?
+                    Hey Sam, have you ever noticed how Chrome on Androind adds
+                    playback controlls to the notification tray when playing
+                    some audio or video on a website?
                 </Bubble>
                 <Bubble>
+                    <audio controls>
+                        <source src={Sound} type="audio/mp3" />
+                    </audio>
+                </Bubble>
+                <Bubble>
+                    That's cool, did you know you can customize the metadata and
+                    add some more controlls?
+                </Bubble>
+                <Bubble onShow={this.setSessionInfo}>
                     <audio controls>
                         <source src={Sound} type="audio/mp3" />
                     </audio>
