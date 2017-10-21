@@ -2,14 +2,11 @@ import { h, render, Component } from 'preact';
 import { BubbleSlide, Bubble } from '../../Components';
 import Config from '../../Config';
 import Poes from '../../../icons/favicon.png';
+import Sound from '../../../sound/bensound-memories.mp3';
 
 export default class MediaSessionPage extends Component {
     constructor(args) {
         super(args);
-
-        this.state = {
-            mediaState: 'playing',
-        };
 
         if ('mediaSession' in navigator) {
             navigator.mediaSession.metadata = new MediaMetadata({
@@ -18,19 +15,6 @@ export default class MediaSessionPage extends Component {
                 album: 'Meow the jewels',
                 artwork: [{ src: 'Poes', sizes: '96x96', type: 'image/png' }],
             });
-
-            navigator.mediaSession.setActionHandler(
-                'play',
-                this.setState({ mediaState: 'playing' })
-            );
-            navigator.mediaSession.setActionHandler(
-                'pause',
-                this.setState({ mediaState: 'paused' })
-            );
-            navigator.mediaSession.setActionHandler(
-                'previoustrack',
-                this.setState({ mediaState: 'next' })
-            );
         }
     }
 
@@ -42,8 +26,9 @@ export default class MediaSessionPage extends Component {
                     webpage?
                 </Bubble>
                 <Bubble>
-                    The state of the media on this page is;{' '}
-                    {this.state.mediaState}!
+                    <audio controls>
+                        <source src={Sound} type="audio/mp3" />
+                    </audio>
                 </Bubble>
             </BubbleSlide>
         );

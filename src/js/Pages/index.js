@@ -17,7 +17,7 @@ export LocationCodePage from './Location-code';
 export MediaRecorderTitlePage from './Media-recorder/Title';
 export MediaRecorderPage from './Media-recorder';
 export MediaRecorderCodePage from './Media-recorder-code';
-export MediaSessionTitlePage from './Media-session';
+export MediaSessionTitlePage from './Media-session/Title';
 export MediaSessionPage from './Media-session';
 export MediaSessionCodePage from './Media-session-code';
 export NotificationTitlePage from './Notification/Title';

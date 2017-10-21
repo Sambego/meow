@@ -16,33 +16,44 @@ const createConfig = (env = 'development') => {
             filename: '[name].[hash].js',
         },
         module: {
-            rules: [{
-                test: /\.js$/,
-                exclude: /node_modules/,
-                use: ['babel-loader', 'eslint-loader'],
-            }, {
-                test: /\.scss$/,
-                exclude: /node_modules/,
-                use: ExtractTextPlugin.extract({
-                    fallback: ['style-loader'],
-                    use: ['css-loader?modules&importLoaders=0&localIdentName=[name]__[local]___[hash:base64:5]', 'postcss-loader', 'sass-loader'],
-                }),
-            }, {
-                test: /\.css$/,
-                use: ExtractTextPlugin.extract({
-                    fallback: ['style-loader'],
-                    use: ['css-loader'],
-                }),
-            }, {
-                test: /\.(png|jpg|woff|woff2)$/,
-                use: 'file-loader?name=[name].[ext]',
-            }, {
-                test: /\.(xml|html|txt|md)$/,
-                use: 'raw-loader',
-            }, {
-                test: /\.svg$/,
-                use: 'svg-inline-loader',
-            }],
+            rules: [
+                {
+                    test: /\.js$/,
+                    exclude: /node_modules/,
+                    use: ['babel-loader', 'eslint-loader'],
+                },
+                {
+                    test: /\.scss$/,
+                    exclude: /node_modules/,
+                    use: ExtractTextPlugin.extract({
+                        fallback: ['style-loader'],
+                        use: [
+                            'css-loader?modules&importLoaders=0&localIdentName=[name]__[local]___[hash:base64:5]',
+                            'postcss-loader',
+                            'sass-loader',
+                        ],
+                    }),
+                },
+                {
+                    test: /\.css$/,
+                    use: ExtractTextPlugin.extract({
+                        fallback: ['style-loader'],
+                        use: ['css-loader'],
+                    }),
+                },
+                {
+                    test: /\.(png|jpg|woff|woff2|mp3)$/,
+                    use: 'file-loader?name=[name].[ext]',
+                },
+                {
+                    test: /\.(xml|html|txt|md)$/,
+                    use: 'raw-loader',
+                },
+                {
+                    test: /\.svg$/,
+                    use: 'svg-inline-loader',
+                },
+            ],
         },
         devtool: 'source-map',
         plugins: [
@@ -62,21 +73,28 @@ const createConfig = (env = 'development') => {
             new HtmlWebpackPlugin({
                 template: './src/index.html',
             }),
-            new CopyWebpackPlugin([{
-                context: './src/favicon/',
-                from: '**/*',
-            }, {
-                from: './src/manifest.json',
-            }, {
-                from: './src/browserconfig.xml',
-            }, {
-                from: './src/js/firebase-messaging-sw.js',
-            }, {
-                from: './src/js/offline-caching-sw.js',
-            }, {
-                context: './videos/',
-                from: '**/*',
-            }]),
+            new CopyWebpackPlugin([
+                {
+                    context: './src/favicon/',
+                    from: '**/*',
+                },
+                {
+                    from: './src/manifest.json',
+                },
+                {
+                    from: './src/browserconfig.xml',
+                },
+                {
+                    from: './src/js/firebase-messaging-sw.js',
+                },
+                {
+                    from: './src/js/offline-caching-sw.js',
+                },
+                {
+                    context: './videos/',
+                    from: '**/*',
+                },
+            ]),
         ],
         devServer: {
             port: process.env.PORT || 8080,
