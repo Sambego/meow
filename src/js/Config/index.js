@@ -1,7 +1,7 @@
 const Config = {
-    event: 'Creativity Gym',
-    location: 'Mechelen',
-    composer: 'Jacques Brel',
+    event: 'Mobilization',
+    location: 'Lodz',
+    composer: 'Fryderyk Chopin',
 };
 
 export default Config;

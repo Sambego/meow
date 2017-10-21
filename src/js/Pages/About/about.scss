@@ -18,3 +18,16 @@
         background-position: 0 1.2rem;
     }
 }
+
+.fronteers {
+    padding-left: 3.5rem;
+
+    background: transparent url("../../../img/fronteers.png") 0 0.6rem no-repeat;
+    background-size: 3rem;
+
+    color: #FCBE11;
+
+    @media (min-width: 700px) {
+        background-position: 0 1rem;
+    }
+}

@@ -17,6 +17,7 @@ export default class AboutPage extends Component {
             <BubbleSlide previous="/" next="/speech">
                 <Bubble>My name is Sam Bellen.</Bubble>
                 <Bubble>I'm a software engineer at <span className={Styles.mwl}>madewithlove</span>.</Bubble>
+                <Bubble>I'm a co-organizer of the <span className={Styles.fronteers}>Fronteers</span> meetups.</Bubble>
                 <Bubble>You can find me online as <a href="https://github.com/sambego" target="_blank">Sambego</a>.</Bubble>
                 <Bubble>I like cats. 😻</Bubble>
                 <Bubble><img src={Poes} alt="My cat, Poes." className={Styles.poes}/></Bubble>

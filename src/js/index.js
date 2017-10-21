@@ -1,8 +1,8 @@
 import '../scss/styles.scss';
 
-import {h, render} from 'preact';
+import { h, render } from 'preact';
 import Router from 'preact-router';
-import {Container, Footer} from './Components';
+import { Container, Footer } from './Components';
 import {
     StartPage,
     AboutPage,
@@ -35,6 +35,9 @@ import {
     DeviceOrientationTitlePage,
     DeviceOrientationPage,
     DeviceOrientationCodePage,
+    MediaSessionTitlePage,
+    MediaSessionPage,
+    MediaSessionCodePage,
     HeadTrackingBonusPage,
     HeadTrackingPage,
     AcknowledgementPage,
@@ -42,7 +45,7 @@ import {
     PoesPage,
 } from './Pages';
 
-render((
+render(
     <div>
         <Container>
             <Router>
@@ -77,6 +80,9 @@ render((
                 <DeviceOrientationTitlePage path="/device-orientation" />
                 <DeviceOrientationPage path="/device-orientation-example" />
                 <DeviceOrientationCodePage path="/device-orientation-code" />
+                <MediaSessionTitlePage path="/media-session" />
+                <MediaSessionPage path="/media-session-example" />
+                <MediaSessionCodePage path="/media-session-code" />
                 <HeadTrackingBonusPage path="/bonus" />
                 <HeadTrackingPage path="/head-tracking" />
                 <AcknowledgementPage path="/acknowledgements" />
@@ -86,5 +92,6 @@ render((
         </Container>
 
         <Footer />
-    </div>
-), document.body);
+    </div>,
+    document.body
+);
