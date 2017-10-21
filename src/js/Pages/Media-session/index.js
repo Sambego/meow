@@ -71,9 +71,9 @@ export default class MediaSessionPage extends Component {
     }
 
     render() {
-        if (!('mediaSession' in navigator)) {
-            return this.renderNoSupportMessage();
-        }
+        // if (!('mediaSession' in navigator)) {
+        //     return this.renderNoSupportMessage();
+        // }
 
         return this.renderSlide();
     }
