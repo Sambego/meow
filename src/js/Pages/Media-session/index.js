@@ -8,7 +8,7 @@ export default class MediaSessionPage extends Component {
     constructor(args) {
         super(args);
 
-        if ('mediaSession' in navigator) {
+        if (navigator.mediaSession) {
             navigator.mediaSession.metadata = new MediaMetadata({
                 title: 'Close your eyes and meow to fluff',
                 artist: 'Meow the jewels',
