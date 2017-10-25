@@ -6,7 +6,6 @@ export default class FuturePage extends Component {
         return (
             <BubbleSlide previous="/future" next="/bonus">
                 <Bubble>Payments API</Bubble>
-                <Bubble>Share API</Bubble>
                 <Bubble>Web bluetooth API</Bubble>
                 <Bubble>Web USB API</Bubble>
                 <Bubble>

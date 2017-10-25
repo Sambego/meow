@@ -1,6 +1,6 @@
-import {h, render, Component} from 'preact';
-import {BubbleSlide} from '../../Components';
-import {Keyboard} from '../../Services';
+import { h, render, Component } from 'preact';
+import { BubbleSlide } from '../../Components';
+import { Keyboard } from '../../Services';
 
 export default class ThanksPage extends Component {
     render() {
@@ -10,4 +10,4 @@ export default class ThanksPage extends Component {
             </BubbleSlide>
         );
     }
-};
+}

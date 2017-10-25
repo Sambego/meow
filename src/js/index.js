@@ -40,11 +40,13 @@ import {
     MediaSessionCodePage,
     ShareTitlePage,
     SharePage,
+    ShareCodePage,
     OfflineTitlePage,
     FutureTitlePage,
     FuturePage,
     HeadTrackingBonusPage,
     HeadTrackingPage,
+    QuestionsPage,
     AcknowledgementPage,
     ThanksPage,
     PoesPage,
@@ -90,11 +92,13 @@ render(
                 <MediaSessionCodePage path="/media-session-code" />
                 <ShareTitlePage path="/share" />
                 <SharePage path="/share-example" />
+                <ShareCodePage path="/share-code" />
                 <OfflineTitlePage path="/offline" />
                 <FutureTitlePage path="/future" />
                 <FuturePage path="/future-example" />
                 <HeadTrackingBonusPage path="/bonus" />
                 <HeadTrackingPage path="/head-tracking" />
+                <QuestionsPage path="/questions" />
                 <AcknowledgementPage path="/acknowledgements" />
                 <ThanksPage path="/thanks" />
                 <PoesPage path="/poes" />
