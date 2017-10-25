@@ -1,7 +1,7 @@
 const Config = {
-    event: 'Mobilization',
-    location: 'Lodz',
-    composer: 'Fryderyk Chopin',
+    event: 'International JavScript Conference',
+    location: 'Munich',
+    composer: 'Johann Sebastian Bach',
 };
 
 export default Config;

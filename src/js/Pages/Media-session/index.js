@@ -1,16 +1,16 @@
 import { h, render, Component } from 'preact';
 import { BubbleSlide, Bubble } from '../../Components';
 import Config from '../../Config';
-import Poes from '../../../icons/favicon.png';
+import IconRobot from '../../../icons/favicon-robot.png';
 import Sound from '../../../sound/bensound-memories.mp3';
 
 export default class MediaSessionPage extends Component {
     setSessionInfo() {
         if (navigator.mediaSession) {
             navigator.mediaSession.metadata = new MediaMetadata({
-                title: 'Close your eyes and meow to fluff',
-                artist: 'Meow the jewels',
-                album: 'Meow the jewels',
+                title: 'The Moon',
+                artist: 'Cat Power',
+                album: 'The greatest',
                 artwork: [{ src: 'Poes', sizes: '96x96', type: 'image/png' }],
             });
 
