@@ -1,5 +1,5 @@
 const Config = {
-    event: 'International JavScript Conference',
+    event: 'International JavaScript Conference',
     location: 'Munich',
     composer: 'Johann Sebastian Bach',
 };

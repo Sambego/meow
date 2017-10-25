@@ -38,6 +38,8 @@ import {
     MediaSessionTitlePage,
     MediaSessionPage,
     MediaSessionCodePage,
+    ShareTitlePage,
+    SharePage,
     OfflineTitlePage,
     FutureTitlePage,
     FuturePage,
@@ -86,6 +88,8 @@ render(
                 <MediaSessionTitlePage path="/media-session" />
                 <MediaSessionPage path="/media-session-example" />
                 <MediaSessionCodePage path="/media-session-code" />
+                <ShareTitlePage path="/share" />
+                <SharePage path="/share-example" />
                 <OfflineTitlePage path="/offline" />
                 <FutureTitlePage path="/future" />
                 <FuturePage path="/future-example" />

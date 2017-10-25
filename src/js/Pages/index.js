@@ -30,6 +30,8 @@ export NotificationPushCodePage from './Notification-push-code';
 export OfflineTitlePage from './Offline/Title';
 export PoesPage from './Poes';
 export SpeechTitlePage from './Speech/Title';
+export SharePage from './Share';
+export ShareTitlePage from './Share/Title';
 export SpeechPage from './Speech';
 export SpeechCodePage from './Speech-code';
 export SpeechRecognitionTitlePage from './Speech-recognition/Title';
