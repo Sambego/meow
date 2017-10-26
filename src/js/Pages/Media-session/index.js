@@ -9,7 +9,7 @@ export default class MediaSessionPage extends Component {
         return (
             <BubbleSlide previous="/media-session" next="/media-session-code">
                 <Bubble>
-                    Hey Sam, have you ever noticed how Chrome on Androind adds
+                    Hey Sam, have you ever noticed how Chrome on Android adds
                     playback controlls to the notification tray when playing
                     some audio or video on a website?
                 </Bubble>
