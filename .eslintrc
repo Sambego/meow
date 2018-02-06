@@ -75,7 +75,7 @@
     'newline-before-return': 2,
     'newline-per-chained-call': 0,
     'no-array-constructor': 2,
-    'no-bitwise': 2,
+    'no-bitwise': 0,
     'no-continue': 2,
     'no-inline-comments': 2,
     'no-lonely-if': 2,

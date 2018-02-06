@@ -1,7 +1,7 @@
 const Config = {
-    event: 'International JavaScript Conference',
-    location: 'Munich',
-    composer: 'Ludwig van Beethoven',
+    event: 'JFokus',
+    location: 'Stockholm',
+    composer: 'ABBA',
 };
 
 export default Config;

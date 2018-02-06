@@ -35,6 +35,9 @@ import {
     DeviceOrientationTitlePage,
     DeviceOrientationPage,
     DeviceOrientationCodePage,
+    BluetoothTitlePage,
+    BluetoothPage,
+    BluetoothCodePage,
     MediaSessionTitlePage,
     MediaSessionPage,
     MediaSessionCodePage,
@@ -87,6 +90,9 @@ render(
                 <DeviceOrientationTitlePage path="/device-orientation" />
                 <DeviceOrientationPage path="/device-orientation-example" />
                 <DeviceOrientationCodePage path="/device-orientation-code" />
+                <BluetoothTitlePage path="/bluetooth" />
+                <BluetoothPage path="/bluetooth-example" />
+                <BluetoothCodePage path="/bluetooth-code" />
                 <MediaSessionTitlePage path="/media-session" />
                 <MediaSessionPage path="/media-session-example" />
                 <MediaSessionCodePage path="/media-session-code" />

@@ -14,6 +14,10 @@ export default class BatteryPage extends Component {
         }
     }
 
+    state = {
+        battery: {},
+    }
+
     chargeListener = () => this.refs.bubbleSlide.getNextAction();
 
     removeBatteryListener() {

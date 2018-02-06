@@ -9,7 +9,7 @@ export default class DeviceOrientationCodePage extends Component {
         return (
             <BubbleSlide
                 previous="/device-orientation-example"
-                next="/media-session"
+                next="/bluetooth"
             >
                 <Bubble>
                     To listen to changes in the orientation of our device, we

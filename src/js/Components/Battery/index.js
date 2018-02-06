@@ -10,19 +10,6 @@ export default class Battery extends Component {
         this.state = {
             level: 1,
         };
-
-        if ('getBattery' in navigator) {
-            ::navigator.getBattery().then(battery => {
-                this.setState({
-                    battery,
-                    charging: battery.charging,
-                    level: battery.level,
-                });
-
-                this.state.battery.addEventListener('levelchange', this.levelListener);
-                this.state.battery.addEventListener('chargingchange', this.chargingListener);
-            });
-        }
     }
 
     levelListener = () => this.setBatteryLevel();
@@ -41,9 +28,31 @@ export default class Battery extends Component {
         });
     }
 
+    componentWillMount() {
+        if (!this.props.value && 'getBattery' in navigator) {
+            ::navigator.getBattery().then(battery => {
+                this.setState({
+                    battery,
+                    charging: battery.charging,
+                    level: battery.level,
+                });
+
+                this.state.battery.addEventListener('levelchange', this.levelListener);
+                this.state.battery.addEventListener('chargingchange', this.chargingListener);
+            });
+        } else if (this.props.value) {
+            this.setState({
+                charging: false,
+                level: this.props.value / 100,
+            });
+        }
+    }
+
     componentWillUnmount() {
-        this.state.battery.removeEventListener('levelchange', this.levelListener);
-        this.state.battery.removeEventListener('chargingchange', this.chargingListener);
+        if (this.state.battery) {
+            this.state.battery.removeEventListener('levelchange', this.levelListener);
+            this.state.battery.removeEventListener('chargingchange', this.chargingListener);
+        }
     }
 
     render() {
