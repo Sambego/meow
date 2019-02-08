@@ -95,6 +95,9 @@ const createConfig = (env = 'development') => {
                     context: './videos/',
                     from: '**/*',
                 },
+                {
+                    from: "./_redirects"
+                },
             ]),
         ],
         devServer: {
