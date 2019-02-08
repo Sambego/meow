@@ -58,7 +58,8 @@ const createConfig = (env = 'development') => {
         devtool: 'source-map',
         plugins: [
             new DotenvPlugin({
-                sample: './.env.example',
+                allowEmptyValues: true,
+	 	sample: './.env.example',
                 path: './.env',
             }),
             new webpack.LoaderOptionsPlugin({

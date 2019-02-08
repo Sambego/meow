@@ -16,7 +16,7 @@
     "classnames": "^2.2.5",
     "copy-webpack-plugin": "^4.0.1",
     "firebase": "^3.7.2",
-    "frequency-calculator": "^0.0.7",
+    "frequency-calculator": "^0.0.8",
     "google-maps-api": "^2.0.1",
     "gyronorm": "^2.0.6",
     "keycode": "^2.1.8",
