@@ -1,1 +1,5 @@
+# Redirect sambego.be to sambeg.tech
+https://jwt.sambego.be/* https://jwt.sambego.tech/:splat 301!
+
+# Suport the history API
 /* /index.html 200
