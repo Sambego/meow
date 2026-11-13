@@ -1,5 +1,5 @@
 # Redirect sambego.be to sambeg.tech
-https://meow.sambego.be/* https://meow.sambego.tech/:splat 301!
+# https://meow.sambego.be/* https://meow.sambego.tech/:splat 301!  # UNSUPPORTED on Workers: domain-level redirect → use a Cloudflare Redirect Rule
 
 # Suport the history API
-/* /index.html 200
+# /* /index.html 200  # replaced by assets.not_found_handling = "single-page-application"
